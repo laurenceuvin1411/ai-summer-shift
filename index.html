@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Summer Shift — Laurence Uvin</title>
+<meta name="description" content="Bouw deze zomer je website. Met AI als je co-founder. Een AI Summer Shift voor tien ondernemers: drie halve dagen op BORA, eind juni tot eind augustus 2026." />
+
+<!--
+  =====================================================================
+  AFBEELDINGEN — sla deze foto's in /images/ op met deze namen:
+
+    images/hero-1.jpg       (hero collage links · 3:4 portret-oriëntatie)
+    images/hero-2.jpg       (hero collage midden · 3:4 portret · iets langer)
+    images/hero-3.jpg       (hero collage rechts · 3:4 portret-oriëntatie)
+    images/laurence.jpg     (portret Laurence · 3:4)
+    images/bora-team.jpg    (groepsshoot · 21:9 cinemascope)
+    images/team-group.jpg   (lachende groep · 16:9)
+
+  Foto's verschijnen automatisch zodra de bestanden er staan.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900,301,401,501,701&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   AI SUMMER SHIFT — Warm-zwart · Cinematic editorial
+   ================================================================ */
+
+:root {
+  --th-black:      #191917;
+  --th-black-deep: #0e0e0c;
+  --th-black-soft: #232220;
+  --th-white:      #ffffff;
+  --th-cream:      #f6f1e6;
+  --th-grey-light: #f3f3f3;
+
+  --white-90: rgba(255,255,255,0.92);
+  --white-80: rgba(255,255,255,0.82);
+  --white-60: rgba(255,255,255,0.60);
+  --white-40: rgba(255,255,255,0.40);
+  --white-20: rgba(255,255,255,0.18);
+  --white-10: rgba(255,255,255,0.08);
+
+  --black-80: rgba(25,25,23,0.82);
+  --black-60: rgba(25,25,23,0.60);
+  --black-40: rgba(25,25,23,0.40);
+  --black-20: rgba(25,25,23,0.18);
+
+  --warm-tan:      #c4a684;
+  --peach:         #e89668;
+
+  --sans:  'Satoshi', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --mono:  'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --gutter: clamp(22px, 4vw, 56px);
+  --maxw:   1480px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--th-black); }
+
+body {
+  background: var(--th-black);
+  color: var(--th-white);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-feature-settings: "ss01";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a   { color: inherit; text-decoration: none; }
+
+::selection { background: var(--warm-tan); color: var(--th-black); }
+
+/* ================================================================
+   TOP BAR
+   ================================================================ */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 24px var(--gutter);
+  background: linear-gradient(180deg, rgba(25,25,23,0.78) 0%, rgba(25,25,23,0.4) 70%, transparent 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.topbar-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+}
+.topbar-left {
+  font-size: 14px;
+  color: var(--th-white);
+  line-height: 1.3;
+  font-weight: 500;
+}
+.topbar-left .sub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  font-weight: 400;
+  margin-top: 4px;
+}
+.topbar-center {
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--th-white);
+  font-weight: 500;
+}
+.topbar-right {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-size: 15px;
+  color: var(--th-white);
+  font-weight: 500;
+}
+.topbar-right a { transition: color 0.2s; }
+.topbar-right a:hover { color: var(--white-60); }
+.topbar-right .menu-btn {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--white-20);
+  display: grid;
+  place-items: center;
+  margin-left: 6px;
+  cursor: pointer;
+  transition: all 0.25s;
+  background: transparent;
+}
+.topbar-right .menu-btn:hover { border-color: var(--th-white); background: var(--white-10); }
+.topbar-right .menu-btn span {
+  position: relative;
+  width: 14px; height: 1px;
+  background: var(--th-white);
+  display: block;
+}
+.topbar-right .menu-btn span::before,
+.topbar-right .menu-btn span::after {
+  content: ""; position: absolute;
+  left: 0; right: 0; height: 1px;
+  background: var(--th-white);
+}
+.topbar-right .menu-btn span::before { top: -5px; }
+.topbar-right .menu-btn span::after  { top:  5px; }
+
+@media (max-width: 900px) {
+  .topbar { padding: 18px 22px; }
+  .topbar-inner { grid-template-columns: 1fr auto auto; gap: 16px; }
+  .topbar-left { font-size: 12px; }
+  .topbar-left .sub { display: none; }
+  .topbar-right a:not(.menu-btn) { display: none; }
+  .topbar-center { font-size: 11px; letter-spacing: 0.3em; }
+}
+
+/* ================================================================
+   LAYOUT
+   ================================================================ */
+section { padding: 0 var(--gutter); position: relative; }
+.wrap { max-width: var(--maxw); margin: 0 auto; }
+.wrap-narrow { max-width: 960px; margin: 0 auto; }
+.wrap-mid { max-width: 1180px; margin: 0 auto; }
+
+.corner {
+  position: absolute;
+  top: 60px; left: var(--gutter);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-40);
+  z-index: 3;
+}
+.corner b { color: var(--th-white); font-weight: 500; margin-right: 12px; }
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 400;
+}
+.kicker::before {
+  content: ""; width: 32px; height: 1px;
+  background: var(--th-white);
+}
+.kicker .num { color: var(--th-white); font-weight: 500; }
+
+/* ================================================================
+   TYPOGRAPHY
+   ================================================================ */
+h1, h2, h3, h4 {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--th-white);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.h1 {
+  font-family: var(--sans);
+  font-size: clamp(54px, 11.5vw, 196px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--th-white);
+  display: block;
+}
+.h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--th-white);
+}
+.h1 .dot { color: var(--peach); font-style: normal; }
+
+h2, .h2 {
+  font-size: clamp(40px, 7vw, 110px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+h2 em, .h2 em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  text-transform: none;
+}
+h3 em { font-style: italic; font-weight: 500; }
+
+p { color: var(--white-80); margin-bottom: 1em; }
+
+.deck {
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.45;
+  color: var(--white-80);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  max-width: 34ch;
+}
+.deck em { font-style: italic; }
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--th-white);
+  color: var(--th-black);
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 22px 32px;
+  border: 1px solid var(--th-white);
+  border-radius: 999px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+.btn:hover { background: transparent; color: var(--th-white); }
+.btn .arrow { width: 22px; height: 8px; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.btn:hover .arrow { transform: translateX(6px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--th-white);
+  border-color: var(--white-40);
+}
+.btn-ghost:hover { background: var(--th-white); color: var(--th-black); border-color: var(--th-white); }
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.hero {
+  background: var(--th-black);
+  min-height: 100vh;
+  padding-top: 200px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero-pre {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  margin-bottom: 90px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 16px;
+  position: relative; z-index: 2;
+}
+.hero-pre .dot {
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--white-40);
+}
+
+.hero-block {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  justify-content: center;
+  position: relative; z-index: 2;
+}
+
+.h1.hero-line {
+  width: 100%;
+  display: block;
+}
+.h1.hero-line + .h1.hero-line { margin-top: 0.02em; }
+
+.hero-sub {
+  margin-top: 60px;
+  max-width: 38ch;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.5;
+  color: var(--white-80);
+  font-weight: 400;
+}
+.hero-sub em { font-style: italic; }
+
+.hero-meta {
+  margin-top: 40px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-meta .sep {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--white-40);
+}
+
+.hero-cta-row {
+  margin-top: 56px;
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-cta-row .available {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-cta-row .available::before {
+  content: ""; width: 8px; height: 8px;
+  border-radius: 50%; background: #6bc88e;
+  box-shadow: 0 0 0 4px rgba(107,200,142,0.16);
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(107,200,142,0.16); }
+  50%      { box-shadow: 0 0 0 9px rgba(107,200,142,0.04); }
+}
+
+/* Hero photo collage */
+.hero-collage {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  position: relative; z-index: 2;
+}
+.hero-collage .photo {
+  aspect-ratio: 3 / 4;
+  background: var(--th-black-soft);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-collage .photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+}
+.hero-collage .photo.tall { aspect-ratio: 3/4.4; }
+.hero-collage .photo:nth-child(2) { transform: translateY(-32px); }
+.hero-collage .photo:nth-child(3) { transform: translateY(18px); }
+.hero-collage .photo::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: 14px; left: 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.hero-foot {
+  margin-top: auto;
+  padding-top: 60px;
+  border-top: 1px solid var(--white-10);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  line-height: 1.7;
+  position: relative; z-index: 2;
+}
+.hero-foot > div { display: flex; flex-direction: column; }
+.hero-foot b {
+  color: var(--th-white);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.hero-foot > div:last-child { text-align: right; align-items: flex-end; }
+
+@media (max-width: 900px) {
+  .hero { padding-top: 140px; }
+  .hero-pre { margin-bottom: 50px; }
+  .hero-collage { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 60px; }
+  .hero-collage .photo:nth-child(3) { display: none; }
+  .hero-collage .photo:nth-child(2) { transform: translateY(0); }
+  .hero-foot { grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 60px; padding-top: 40px; }
+  .hero-foot > div:last-child { text-align: left; align-items: flex-start; }
+}
+
+/* ================================================================
+   BLUR-IN
+   ================================================================ */
+.blur-in {
+  opacity: 0;
+  filter: blur(0.25em);
+  will-change: filter, opacity;
+  animation: blurIn 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.blur-in.d0 { animation-delay: 0.05s; }
+.blur-in.d1 { animation-delay: 0.18s; }
+.blur-in.d2 { animation-delay: 0.32s; }
+.blur-in.d3 { animation-delay: 0.50s; }
+.blur-in.d4 { animation-delay: 0.70s; }
+.blur-in.d5 { animation-delay: 0.92s; }
+.blur-in.d6 { animation-delay: 1.16s; }
+.blur-in.d7 { animation-delay: 1.40s; }
+@keyframes blurIn { to { opacity: 1; filter: blur(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-in { opacity: 1; transform: none; filter: none; animation: none; }
+}
+
+/* ================================================================
+   MARQUEE STRIP
+   ================================================================ */
+.strip {
+  background: var(--th-black);
+  border-top: 1px solid var(--white-10);
+  border-bottom: 1px solid var(--white-10);
+  padding: 22px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.strip-track {
+  display: inline-block;
+  animation: scroll 45s linear infinite;
+  padding-left: 100%;
+  font-size: clamp(16px, 1.4vw, 20px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--th-white);
+}
+.strip-track span { margin: 0 22px; }
+.strip-track em { font-style: italic; color: var(--white-60); margin: 0 22px; font-weight: 400; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ================================================================
+   HOOK
+   ================================================================ */
+.hook {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black);
+}
+.hook .lead {
+  margin-top: 60px;
+  font-size: clamp(30px, 4.6vw, 64px);
+  line-height: 1.06;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--th-white);
+}
+.hook .lead em { font-style: italic; color: var(--white-60); font-weight: 500; }
+
+.hook .pull {
+  display: block;
+  margin: 80px 0;
+  padding: 70px 0;
+  border-top: 1px solid var(--white-10);
+  border-bottom: 1px solid var(--white-10);
+  font-size: clamp(56px, 11vw, 160px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--th-white);
+}
+.hook .pull em { font-style: italic; color: var(--white-40); font-weight: 500; }
+
+.hook-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 40px;
+}
+.hook-cols p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--white-80);
+}
+
+@media (max-width: 800px) {
+  .hook-cols { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ================================================================
+   VOOR WIE
+   ================================================================ */
+.for-who {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black-deep);
+}
+.who-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.who-head .deck { padding-bottom: 8px; max-width: 30ch; }
+.who-head h2 { margin-top: 28px; }
+.who-head h2 em { color: var(--white-60); }
+
+.who-list {
+  list-style: none;
+  border-top: 1px solid var(--white-10);
+}
+.who-list li {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  gap: 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--white-10);
+  align-items: baseline;
+  transition: padding-left 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.who-list li:hover { padding-left: 16px; }
+.who-list li .rn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--white-60);
+  font-weight: 500;
+}
+.who-list li .text {
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.022em;
+  color: var(--th-white);
+  font-weight: 500;
+}
+.who-list li .text em { font-style: italic; color: var(--white-80); font-weight: 500; }
+.who-list li .arr {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--white-40);
+  text-align: right;
+  transition: color 0.3s, transform 0.3s;
+}
+.who-list li:hover .arr { color: var(--th-white); transform: translateX(4px); }
+
+.not-for {
+  margin-top: 60px;
+  padding: 36px 40px;
+  border: 1px solid var(--white-10);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--white-80);
+  max-width: 760px;
+  letter-spacing: -0.005em;
+}
+.not-for em { font-style: italic; color: var(--th-white); font-weight: 500; }
+
+@media (max-width: 800px) {
+  .who-head { grid-template-columns: 1fr; gap: 24px; }
+  .who-list li { grid-template-columns: 50px 1fr 30px; padding: 28px 0; }
+}
+
+/* ================================================================
+   DELIVERABLES
+   ================================================================ */
+.deliv {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black);
+}
+.deliv-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 90px;
+}
+.deliv-head h2 { margin-top: 28px; }
+.deliv-head h2 em { color: var(--white-60); }
+
+.deliv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--white-10);
+}
+.deliv-card {
+  padding: 60px 50px 60px 0;
+  border-bottom: 1px solid var(--white-10);
+  position: relative;
+  transition: background 0.4s;
+}
+.deliv-card:nth-child(2n) {
+  padding-left: 50px;
+  padding-right: 0;
+  border-left: 1px solid var(--white-10);
+}
+.deliv-card:hover { background: rgba(255,255,255,0.02); }
+.deliv-card .dn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--white-60);
+  font-weight: 500;
+  margin-bottom: 24px;
+  display: block;
+}
+.deliv-card h3 { margin-bottom: 16px; font-size: clamp(24px, 2.4vw, 30px); }
+.deliv-card h3 em { font-style: italic; font-weight: 500; }
+.deliv-card p { font-size: 16px; line-height: 1.65; color: var(--white-80); }
+
+@media (max-width: 800px) {
+  .deliv-head { grid-template-columns: 1fr; gap: 20px; }
+  .deliv-grid { grid-template-columns: 1fr; }
+  .deliv-card { padding: 44px 0 !important; border-left: none !important; }
+}
+
+/* ================================================================
+   PROGRAMME
+   ================================================================ */
+.programme {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black-deep);
+}
+.prog-head {
+  text-align: center;
+  margin-bottom: 110px;
+}
+.prog-head .kicker { justify-content: center; }
+.prog-head h2 { display: inline-block; margin-top: 32px; }
+.prog-head h2 em { color: var(--white-60); }
+.prog-head .tag {
+  margin-top: 32px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.prog-head .tag::before,
+.prog-head .tag::after {
+  content: ""; width: 60px; height: 1px;
+  background: var(--white-20);
+}
+
+.retreat {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(40px, 6vw, 100px);
+  padding: 80px 0;
+  border-top: 1px solid var(--white-10);
+  align-items: start;
+}
+.retreat:last-of-type { border-bottom: 1px solid var(--white-10); }
+
+.retreat-num {
+  font-size: clamp(110px, 17vw, 240px);
+  font-weight: 500;
+  line-height: 0.85;
+  letter-spacing: -0.07em;
+  color: var(--th-white);
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.retreat-body { padding-top: 18px; }
+.retreat-body .step {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  margin-bottom: 16px;
+  display: block;
+  font-weight: 500;
+}
+.retreat-body h3 {
+  font-size: clamp(28px, 4vw, 52px);
+  margin-bottom: 18px;
+  letter-spacing: -0.032em;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1.02;
+}
+.retreat-body h3 em { font-style: italic; color: var(--white-60); font-weight: 500; }
+.retreat-body .when {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  margin-bottom: 28px;
+  display: block;
+}
+.retreat-body p { font-size: 17px; line-height: 1.7; max-width: 60ch; color: var(--white-80); }
+
+.prog-outro {
+  margin-top: 110px;
+  text-align: center;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.4;
+  color: var(--white-80);
+  letter-spacing: -0.012em;
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .retreat { grid-template-columns: 1fr; gap: 16px; padding: 60px 0; }
+}
+
+/* ================================================================
+   BORA
+   ================================================================ */
+.bora {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black);
+}
+.bora-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 60px;
+}
+.bora-head h2 { margin-top: 28px; }
+.bora-head h2 em { color: var(--white-60); }
+.bora-head .deck { padding-bottom: 8px; max-width: 32ch; }
+
+.bora-image-wide {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 60px 0 80px;
+  background:
+    linear-gradient(180deg, rgba(25,25,23,0) 0%, rgba(25,25,23,0.6) 100%),
+    radial-gradient(ellipse at 30% 30%, rgba(255,230,195,0.16), transparent 55%),
+    linear-gradient(180deg, #3a342a 0%, #25201a 60%, #15130f 100%);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--white-10);
+}
+.bora-image-wide img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; display: block; }
+.bora-image-wide .img-overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3) 100%);
+}
+.bora-image-wide::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 32%;
+  height: 1px;
+  background: rgba(255,255,255,0.16);
+  pointer-events: none; z-index: 2;
+}
+.bora-image-wide .meta-tl,
+.bora-image-wide .meta-tr,
+.bora-image-wide .meta-bl {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  z-index: 3;
+}
+.bora-image-wide .meta-tl { top: 22px; left: 24px; }
+.bora-image-wide .meta-tr { top: 22px; right: 24px; color: var(--white-40); }
+.bora-image-wide .meta-bl { bottom: 22px; left: 24px; color: var(--white-60); }
+
+.bora-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.bora-body p { font-size: 17px; line-height: 1.75; color: var(--white-80); }
+.bora-body .quote {
+  margin: 0;
+  font-size: clamp(28px, 3.8vw, 50px);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--th-white);
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.bora-body .quote em { font-style: italic; color: var(--white-60); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .bora-head, .bora-body { grid-template-columns: 1fr; gap: 28px; }
+}
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+.about {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black-deep);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+}
+.about-portrait {
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(170deg, rgba(25,25,23,0) 0%, rgba(25,25,23,0.65) 100%),
+    radial-gradient(ellipse at 50% 30%, rgba(220,200,170,0.22), transparent 55%),
+    linear-gradient(180deg, #2a2520 0%, #1c1814 60%, #0e0e0c 100%);
+  filter: grayscale(0);
+  border: 1px solid var(--white-10);
+}
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-portrait .ticket {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--th-white);
+  background: rgba(25,25,23,0.55);
+  border: 1px solid var(--white-20);
+  padding: 8px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  z-index: 3;
+}
+.about-portrait .label-br {
+  position: absolute;
+  bottom: 22px; right: 22px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  z-index: 3;
+}
+
+.about-text h2 { margin-bottom: 32px; margin-top: 28px; }
+.about-text h2 em { color: var(--white-60); }
+.about-text p { font-size: 17px; line-height: 1.75; color: var(--white-80); }
+
+.about-sig {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border-top: 1px solid var(--white-10);
+  padding-top: 30px;
+}
+.about-sig .name {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 56px;
+  color: var(--th-white);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.about-sig .role {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+   GROUP IMAGE BREAK
+   ================================================================ */
+.group-break {
+  padding: 0;
+  background: var(--th-black);
+}
+.group-break .wrap { padding: 0; }
+.group-break .image-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(25,25,23,0.4) 0%, rgba(25,25,23,0) 30%),
+    radial-gradient(ellipse at 50% 100%, rgba(196,166,132,0.18), transparent 60%),
+    linear-gradient(170deg, #2a2520 0%, #1f1a15 60%, #0e0e0c 100%);
+}
+.group-break .image-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block; }
+.group-break .caption {
+  position: absolute;
+  bottom: 24px; left: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-80);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.group-break .caption-r {
+  position: absolute;
+  bottom: 24px; right: 24px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white-60);
+}
+
+/* ================================================================
+   INVESTMENT — light cream inversion
+   ================================================================ */
+.invest {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-grey-light);
+  color: var(--th-black);
+  position: relative;
+}
+.invest .corner { color: var(--black-40); }
+.invest .corner b { color: var(--th-black); }
+.invest .kicker { color: var(--black-60); }
+.invest .kicker::before { background: var(--th-black); }
+.invest .kicker .num { color: var(--th-black); }
+
+.invest-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: start;
+}
+.invest-head h2 { color: var(--th-black); margin-top: 28px; margin-bottom: 28px; }
+.invest-head h2 em { color: var(--black-40); font-style: italic; font-weight: 500; }
+.invest-head .deck { color: var(--th-black); margin-bottom: 50px; max-width: 36ch; }
+
+.price-block {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.price {
+  font-size: clamp(120px, 19vw, 270px);
+  line-height: 0.82;
+  letter-spacing: -0.07em;
+  color: var(--th-black);
+  font-weight: 500;
+  font-style: italic;
+  text-transform: uppercase;
+}
+.price .currency {
+  font-size: 0.4em;
+  color: var(--black-40);
+  margin-right: 8px;
+  vertical-align: 0.55em;
+  font-style: normal;
+}
+.price-fineprint {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black-60);
+  margin-bottom: 50px;
+  line-height: 1.7;
+}
+.price-fineprint b { color: var(--th-black); font-weight: 500; }
+
+.invest-list {
+  list-style: none;
+  border-top: 1px solid var(--black-20);
+}
+.invest-list li {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 14px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--black-20);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.25;
+  color: var(--th-black);
+  letter-spacing: -0.022em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.invest-list li .rn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--black-40);
+  padding-top: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.invest-list li em { font-style: italic; color: var(--black-60); font-weight: 500; }
+
+.invest .small-note {
+  margin-top: 40px;
+  padding: 24px 28px;
+  border-left: 1px solid var(--th-black);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--black-80);
+  max-width: 580px;
+  font-style: italic;
+}
+
+.invest .btn {
+  background: var(--th-black);
+  color: var(--th-white);
+  border-color: var(--th-black);
+  margin-top: 50px;
+}
+.invest .btn:hover { background: transparent; color: var(--th-black); }
+
+@media (max-width: 900px) {
+  .invest-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+/* ================================================================
+   FAQ
+   ================================================================ */
+.faq {
+  padding-top: 180px;
+  padding-bottom: 180px;
+  background: var(--th-black);
+}
+.faq-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 70px;
+}
+.faq-head h2 { margin-top: 28px; }
+.faq-head h2 em { color: var(--white-60); }
+.faq-head .deck { padding-bottom: 8px; max-width: 30ch; }
+
+.faq-list { border-top: 1px solid var(--white-10); }
+.faq-item { border-bottom: 1px solid var(--white-10); }
+.faq-item summary {
+  padding: 36px 0;
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 80px 1fr 36px;
+  gap: 24px;
+  align-items: start;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.022em;
+  color: var(--th-white);
+  text-transform: uppercase;
+  transition: padding-left 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.faq-item:hover summary { padding-left: 12px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item .qn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--white-60);
+  padding-top: 8px;
+  font-weight: 500;
+}
+.faq-item .qmark {
+  width: 32px; height: 32px;
+  border: 1px solid var(--white-20);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  font-weight: 300;
+  margin-top: 2px;
+  transition: all 0.3s;
+  color: var(--th-white);
+}
+.faq-item[open] .qmark {
+  background: var(--th-white);
+  border-color: var(--th-white);
+  color: var(--th-black);
+  transform: rotate(45deg);
+}
+.faq-item .answer {
+  padding: 0 36px 36px 104px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--white-80);
+  max-width: 70ch;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+@media (max-width: 700px) {
+  .faq-head { grid-template-columns: 1fr; gap: 20px; }
+  .faq-item summary { grid-template-columns: 50px 1fr 28px; }
+  .faq-item .answer { padding-left: 0; }
+}
+
+/* ================================================================
+   FINAL CTA
+   ================================================================ */
+.final {
+  padding-top: 220px;
+  padding-bottom: 220px;
+  text-align: center;
+  background: var(--th-black);
+  position: relative;
+  overflow: hidden;
+}
+.final::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(400px, 60vw, 900px);
+  height: clamp(400px, 60vw, 900px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final .kicker { justify-content: center; }
+.final h2 {
+  max-width: 16ch;
+  margin: 32px auto 40px;
+  font-size: clamp(56px, 11vw, 180px);
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+  position: relative; z-index: 1;
+}
+.final h2 em { color: var(--white-60); font-style: italic; font-weight: 500; }
+.final p {
+  max-width: 54ch;
+  margin: 0 auto 60px;
+  font-size: clamp(18px, 1.9vw, 22px);
+  line-height: 1.55;
+  color: var(--white-80);
+  font-weight: 400;
+  position: relative; z-index: 1;
+  letter-spacing: -0.005em;
+}
+.final p em { font-style: italic; color: var(--th-white); }
+.final .btn { margin-bottom: 40px; position: relative; z-index: 1; }
+.final .contact {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-60);
+  position: relative; z-index: 1;
+}
+.final .contact a {
+  color: var(--th-white);
+  border-bottom: 1px solid var(--white-40);
+  padding-bottom: 1px;
+  transition: border-color 0.3s;
+}
+.final .contact a:hover { border-color: var(--th-white); }
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+footer {
+  padding: 100px var(--gutter) 30px;
+  background: var(--th-black-deep);
+  color: var(--white-60);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--white-10);
+}
+.footer-top {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--white-10);
+}
+.footer-logo {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 500;
+  color: var(--th-white);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 22px;
+}
+.footer-logo em { font-style: italic; color: var(--white-60); font-weight: 500; }
+.footer-tagline {
+  color: var(--white-60);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  line-height: 1.6;
+}
+.footer-col h5 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--white-40);
+  margin-bottom: 22px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.footer-col a {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--th-white);
+  transition: color 0.2s;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 400;
+}
+.footer-col a:hover { color: var(--white-60); }
+.footer-meta {
+  max-width: var(--maxw);
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--white-40);
+  font-size: 10px;
+}
+@media (max-width: 800px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<nav class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      AI Summer Shift
+      <span class="sub">Voor 10 ondernemers · Été 2026</span>
+    </div>
+    <a href="#" class="topbar-center">LAURENCE&nbsp;&nbsp;UVIN</a>
+    <div class="topbar-right">
+      <a href="#programma">Programma</a>
+      <a href="#investering">Investering</a>
+      <a href="https://laurenceuvin.plugandpay.nl/checkout/ai-summer-shift-2026" class="menu-btn" aria-label="Aanmelden"><span></span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero-pre blur-in d0">
+    <span>Een AI Summer Shift voor 10 ondernemers</span>
+    <span class="dot"></span>
+    <span>Été 2026</span>
+  </div>
+
+  <div class="hero-block">
+    <span class="h1 hero-line blur-in d1">Bouw deze zomer</span>
+    <span class="h1 hero-line blur-in d2"><em>je website</em>.</span>
+
+    <p class="hero-sub blur-in d3">Met AI als je co-founder. Drie halve dagen op BORA, verspreid over twee maanden. Een strategie voor je website die echt als jou klinkt.</p>
+
+    <div class="hero-meta blur-in d4">
+      <span>Eind juni → eind augustus 2026</span>
+      <span class="sep"></span>
+      <span>BORA · Zuienkerke</span>
+      <span class="sep"></span>
+      <span>Max. 10 plekken</span>
+    </div>
+
+    <div class="hero-cta-row blur-in d5">
+      <a href="https://laurenceuvin.plugandpay.nl/checkout/ai-summer-shift-2026" class="btn">
+        <span>Reserveer je plek</span>
+        <svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg>
+      </a>
+      <span class="available">Plekken nog beschikbaar</span>
+    </div>
+  </div>
+
+  <!-- Photo collage -->
+  <div class="wrap hero-collage blur-in d6">
+    <figure class="photo" data-caption="Bora · 2026">
+      <img src="images/group-two.jpg" alt="Laurence en mentor in actie" onerror="this.style.display='none'">
+    </figure>
+    <figure class="photo tall" data-caption="Laurence Uvin">
+      <img src="images/laurence-one.jpg" alt="Portret Laurence Uvin" onerror="this.style.display='none'">
+    </figure>
+    <figure class="photo" data-caption="The Group">
+      <img src="images/group-three.jpg" alt="Laurence met team in studio" onerror="this.style.display='none'">
+    </figure>
+  </div>
+
+  <div class="wrap hero-foot blur-in d7">
+    <div><b>Editie</b><span>No. 01 / Été 2026</span></div>
+    <div><b>Plek</b><span>BORA Coworking, Zuienkerke</span></div>
+    <div><b>Looptijd</b><span>Juni → Augustus</span></div>
+    <div><b>Aanmelden</b><span>plugandpay.nl/checkout</span></div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE STRIP ============== -->
+<div class="strip">
+  <div class="strip-track">
+    <span>Een zomer</span><em>×</em>
+    <span>Drie retreats</span><em>×</em>
+    <span>Één website</span><em>×</em>
+    <span>BORA Coworking</span><em>×</em>
+    <span>Eind juni · eind augustus 2026</span><em>×</em>
+    <span>Tien ondernemers</span><em>×</em>
+    <span>Een zomer</span><em>×</em>
+    <span>Drie retreats</span><em>×</em>
+    <span>Één website</span><em>×</em>
+    <span>BORA Coworking</span><em>×</em>
+  </div>
+</div>
+
+<!-- ============== HOOK ============== -->
+<section class="hook" id="waarom-nu">
+  <div class="corner"><b>I.</b> Waarom nu</div>
+  <div class="wrap-narrow">
+    <p class="kicker"><span class="num">01</span> &nbsp;·&nbsp; Waarom nu</p>
+    <p class="lead">Een website met sales pagina is voor heel veel ondernemers nog steeds dat ding dat <em>bijna af is.</em> Op een tab open. In een offerte van 3.500 euro. Op een to-do lijst van vorig jaar.</p>
+    <span class="pull">En dan kwam <em>AI</em>.</span>
+    <div class="hook-cols">
+      <p>Ik bouw nu dingen in een namiddag die vroeger weken kostten. Niet omdat ik plots developer ben. Wel omdat de tools eindelijk meedenken in plaats van tegenwerken.</p>
+      <p>Deze zomer leer ik je dat ook. Niet via een online cursus die je nooit afkijkt. Wel live, in een ruimte waar het rustig is, met negen andere ondernemers, en met genoeg tijd ertussen om het stap per stap aan te pakken.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== VOOR WIE ============== -->
+<section class="for-who" id="voor-wie">
+  <div class="corner"><b>II.</b> Casting</div>
+  <div class="wrap">
+    <div class="who-head">
+      <div>
+        <p class="kicker"><span class="num">02</span> &nbsp;·&nbsp; Voor wie</p>
+        <h2>Dit is voor jou <em>als…</em></h2>
+      </div>
+      <p class="deck">Zes signalen waaraan je herkent dat deze zomer voor jou bedoeld is.</p>
+    </div>
+
+    <ul class="who-list">
+      <li><span class="rn">I / VI</span><span class="text">Je een business hebt of opstart en eindelijk een website wil die past bij <em>wie je nu bent.</em></span><span class="arr">→</span></li>
+      <li><span class="rn">II / VI</span><span class="text">Je geen 4.000 à 10.000 euro aan een webdesigner wil uitgeven voor iets dat je later <em>zelf wil kunnen aanpassen.</em></span><span class="arr">→</span></li>
+      <li><span class="rn">III / VI</span><span class="text">Je geen "tech-persoon" bent en dat ook niet wil worden, maar wel <em>zelf je business in handen wil houden.</em></span><span class="arr">→</span></li>
+      <li><span class="rn">IV / VI</span><span class="text">Je AI vaag genoeg vindt om er nieuwsgierig naar te zijn en <em>concreet genoeg om er iets mee te willen.</em></span><span class="arr">→</span></li>
+      <li><span class="rn">V / VI</span><span class="text">Je liever leert in een kleine groep dan <em>in je eentje op je zolderkamer.</em></span><span class="arr">→</span></li>
+      <li><span class="rn">VI / VI</span><span class="text">Je voelt dat dit jaar het jaar is om <em>dat ding eindelijk live te zetten.</em></span><span class="arr">→</span></li>
+    </ul>
+
+    <p class="not-for">Dit is <em>niet</em> voor jou als je een hele complexe webshop met 800 producten wil bouwen, of als je iemand zoekt die het voor jou doet. Hier bouw je zelf, met begeleiding, een toolkit en een groep die je meeneemt.</p>
+  </div>
+</section>
+
+<!-- ============== DELIVERABLES ============== -->
+<section class="deliv" id="wat-krijg-je">
+  <div class="corner"><b>III.</b> Wat je meeneemt</div>
+  <div class="wrap">
+    <div class="deliv-head">
+      <div>
+        <p class="kicker"><span class="num">03</span> &nbsp;·&nbsp; Wat je meeneemt</p>
+        <h2>Wat krijg je <em>concreet</em></h2>
+      </div>
+      <p class="deck">Niet vijftig tools waar je in verdrinkt. Vier dingen die echt werken, en die je voor altijd houdt.</p>
+    </div>
+
+    <div class="deliv-grid">
+      <article class="deliv-card">
+        <span class="dn">01 / Live</span>
+        <h3>Drie live retreats op BORA</h3>
+        <p>Halve dagen in onze coworking aan de kust. Telkens met een warme lunch erbij. We bouwen samen, ik kijk mee, je vertrekt met een stuk website dat af is, niet met huiswerk.</p>
+      </article>
+
+      <article class="deliv-card">
+        <span class="dn">02 / Toolkit</span>
+        <h3>Een AI-toolkit die blijft</h3>
+        <p>De prompts, de tools, de templates die ik zelf gebruik. Voor je copy, je beelden, je structuur, je SEO. Niet vijftig tools waar je in verdrinkt, wel de handvol die echt werkt.</p>
+      </article>
+
+      <article class="deliv-card">
+        <span class="dn">03 / Community</span>
+        <h3>Community tussen de retreats</h3>
+        <p>WhatsApp-groep met de andere negen ondernemers en met mij. Voor de momenten waarop je vastloopt op een knop, twijfelt over een zin, of gewoon wil zien wat anderen aan het maken zijn.</p>
+      </article>
+
+      <article class="deliv-card">
+        <span class="dn">04 / Tempo</span>
+        <h3>Twee maanden ademruimte</h3>
+        <p>Eind juni starten we, eind augustus ben je live. Geen sprint van twee weken, wel een zomer waarin je in je eigen tempo bouwt, met drie vaste momenten waar het écht vooruitgaat.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROGRAMME ============== -->
+<section class="programme" id="programma">
+  <div class="corner"><b>IV.</b> Het programma</div>
+  <div class="wrap-narrow">
+    <div class="prog-head">
+      <p class="kicker"><span class="num">04</span> &nbsp;·&nbsp; Het programma</p>
+      <h2>Drie retreats,<br><em>één website.</em></h2>
+      <div class="tag">Juni · Juli · Augustus</div>
+    </div>
+
+    <article class="retreat">
+      <div class="retreat-num">I</div>
+      <div class="retreat-body">
+        <span class="step">Retreat 01 · Fundament</span>
+        <h3>Fundament. <em>Wie je bent, wat je verkoopt.</em></h3>
+        <span class="when">Eind juni · BORA · halve dag + lunch</span>
+        <p>We beginnen bij het begin: wie ben je, wat verkoop je, wie spreek je aan. Niet de marketing-versie, maar de versie die klopt. Daarna kiezen we je tool (Lovable, Emergent, Claude Code of een andere AI-website builder, afhankelijk van wat jij nodig hebt) en zetten we je eerste pagina's neer. Je vertrekt met een homepage in zijn ruwe vorm.</p>
+      </div>
+    </article>
+
+    <article class="retreat">
+      <div class="retreat-num">II</div>
+      <div class="retreat-body">
+        <span class="step">Retreat 02 · Bouwen</span>
+        <h3>Bouwen. <em>Copy, beeld, structuur.</em></h3>
+        <span class="when">Eind juli · BORA · halve dag + lunch</span>
+        <p>We gaan dieper. Copy die voor je werkt zonder dat ze als marketing voelt. Beelden die kloppen met je brand, een sales pagina met je belangrijkste dienst of product. Een over-mij die mensen doet blijven. Tegen het einde van deze namiddag staat de structuur van je hele site.</p>
+      </div>
+    </article>
+
+    <article class="retreat">
+      <div class="retreat-num">III</div>
+      <div class="retreat-body">
+        <span class="step">Retreat 03 · Lanceren</span>
+        <h3>Lanceren. <em>Publish day.</em></h3>
+        <span class="when">Eind augustus · BORA · halve dag + lunch</span>
+        <p>Polish, technische details, je domeinnaam, je e-mailadres, een eenvoudig plan voor onderhoud en updates. We drukken samen op publish. We vieren samen.</p>
+      </div>
+    </article>
+
+    <p class="prog-outro">Tussen de retreats werk je in je eigen tempo, met de toolkit en de groep als rugdekking.</p>
+  </div>
+</section>
+
+<!-- ============== BORA ============== -->
+<section class="bora" id="bora">
+  <div class="corner"><b>V.</b> De plek</div>
+  <div class="wrap">
+    <div class="bora-head">
+      <div>
+        <p class="kicker"><span class="num">05</span> &nbsp;·&nbsp; De plek</p>
+        <h2>BORA Coworking,<br><em>Zuienkerke.</em></h2>
+      </div>
+      <p class="deck">Vlak bij de zee, ruim, rustig. De juiste energie om diep te werken zonder dat het zwaar voelt.</p>
+    </div>
+
+    <figure class="bora-image-wide">
+      <img src="images/feet.jpg" alt="BORA Coworking team in actie" onerror="this.style.display='none'">
+      <span class="img-overlay"></span>
+      <span class="meta-tl">PL. 05 / Coworking aan de kust</span>
+      <span class="meta-tr">51.2562°N · 3.0747°E</span>
+      <span class="meta-bl">BORA · Zuienkerke · België</span>
+    </figure>
+
+    <div class="bora-body">
+      <p>Ik geloof niet dat je een website bouwt in een vacuüm. Niet alleen omdat je vragen hebt die je sneller mondeling oplost dan via een video. Wel omdat er iets gebeurt in een ruimte met negen andere ondernemers die in hetzelfde aan het bouwen zijn. BORA coworking is mijn eigen plek, samen met die van m'n team. Vlak bij de zee, ruim, rustig.</p>
+      <div>
+        <p class="quote">Geen vakantie.<br>Geen workshop.<br><em>Iets ertussen.</em></p>
+        <p style="margin-top:30px;">Een lunch tussen de twee werkblokken in. Tijd om aan tafel even niet over de business te hebben, en dan terug naar het scherm. Dat is voor mij wat een mini-retreat is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section class="about" id="over">
+  <div class="corner"><b>VI.</b> Over Laurence</div>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-portrait">
+        <img src="images/laurence-two.jpg" alt="Portret Laurence Uvin" onerror="this.style.display='none'">
+        <span class="ticket">L.U. · Founder</span>
+        <span class="label-br">Portret · 2026</span>
+      </div>
+      <div class="about-text">
+        <p class="kicker"><span class="num">06</span> &nbsp;·&nbsp; Over Laurence</p>
+        <h2>Wie ik <em>ben.</em></h2>
+        <p>Ik ben Laurence. Op mijn 22ste startte ik BORA coworking mee op. Ondertussen draait er The CEO Club, een podcast (CEO Lifestyle™), en bouw ik aan een leven waarin business, sport en reizen naast elkaar mogen bestaan.</p>
+        <p>Ik ben geen developer. Ik ben geen designer. Wat ik wel ben: iemand die de afgelopen jaren tientallen sites, sales pages en kleine tools heeft gebouwd voor mezelf en de ondernemers rond me. Eerst traag, nu met AI in een fractie van de tijd.</p>
+        <p>Wat ik in deze Summer Shift deel is geen theorie. Het is precies wat ik zelf gebruik voor m'n verschillende projecten en klanten.</p>
+        <div class="about-sig">
+          <div class="name">Laurence</div>
+          <div class="role">Founder · BORA<br>Host · CEO Lifestyle™<br>The CEO Club</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== GROUP IMAGE BREAK ============== -->
+<section class="group-break">
+  <div class="wrap">
+    <div class="image-wrap">
+      <img src="images/group-one.jpg" alt="Class of Été 2026 — vijf ondernemers" onerror="this.style.display='none'">
+      <span class="caption">The Class of Été 2026</span>
+      <span class="caption-r">Tien ondernemers · één zomer</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INVESTMENT ============== -->
+<section class="invest" id="investering">
+  <div class="corner"><b>VII.</b> De investering</div>
+  <div class="wrap">
+    <div class="invest-grid">
+      <div class="invest-head">
+        <p class="kicker"><span class="num">07</span> &nbsp;·&nbsp; De investering</p>
+        <h2>Eén prijs.<br><em>Tien plekken.</em></h2>
+        <p class="deck">Drie retreatdagen, twee maanden begeleiding, één website die echt van jou is.</p>
+
+        <div class="price-block">
+          <div class="price"><span class="currency">€</span>1.200</div>
+        </div>
+        <p class="price-fineprint">excl. 21% btw · <b>betaling in 2 of 3 keer mogelijk</b></p>
+
+        <p class="small-note">Slechts tien plekken. Niet uit strategie, gewoon omdat ik elke deelnemer in de retreat persoonlijk wil kunnen meekijken. Tien is wat in de ruimte past, en wat in mijn aandacht past.</p>
+
+        <a href="https://laurenceuvin.plugandpay.nl/checkout/ai-summer-shift-2026" class="btn">
+          <span>Reserveer je plek</span>
+          <svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg>
+        </a>
+      </div>
+
+      <div>
+        <ul class="invest-list">
+          <li><span class="rn">I.</span><span>3 halve retreatdagen in BORA, <em>met lunch</em></span></li>
+          <li><span class="rn">II.</span><span>AI-toolkit · <em>prompts, tools, templates</em></span></li>
+          <li><span class="rn">III.</span><span>WhatsApp-community <em>met de groep</em></span></li>
+          <li><span class="rn">IV.</span><span>2 maanden begeleiding, <em>juni → augustus</em></span></li>
+          <li><span class="rn">V.</span><span>Een afgewerkte, <em>gepubliceerde website</em></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq" id="faq">
+  <div class="corner"><b>VIII.</b> FAQ</div>
+  <div class="wrap-narrow">
+    <div class="faq-head">
+      <div>
+        <p class="kicker"><span class="num">08</span> &nbsp;·&nbsp; FAQ</p>
+        <h2>Wat ik vaak <em>krijg gevraagd.</em></h2>
+      </div>
+      <p class="deck">Zes vragen die ik bijna elke week in m'n inbox zie.</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span class="qn">Q.01</span><span>Ik ben echt niet technisch. Is dit voor mij?</span><span class="qmark">+</span></summary>
+        <div class="answer">Ja. AI maakt precies dat obstakel kleiner. Je hoeft geen code te kennen, geen design-software, geen (ingewikkelde) plug-ins. Als je een tekst kan typen, kan je bouwen. Wat hier nodig is, is dat je je business kent, niet dat je tech kent.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="qn">Q.02</span><span>Welke tool gebruiken we?</span><span class="qmark">+</span></summary>
+        <div class="answer">Dat hangt af van jou. Voor de meeste deelnemers zal dat Lovable, Emergent of Claude Code zijn, soms een no-code site builder met AI ingebouwd. We kiezen in de eerste retreat samen wat past bij jouw soort business.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="qn">Q.03</span><span>Wat als ik één retreat moet missen?</span><span class="qmark">+</span></summary>
+        <div class="answer">We nemen elke retreat op (de kennisstukken, niet de privé-gesprekken). En de groep is sowieso je back-up. Maar de live momenten zijn waar het magisch wordt, dus kom als het kan.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="qn">Q.04</span><span>Krijg ik na de zomer ook nog support?</span><span class="qmark">+</span></summary>
+        <div class="answer">De WhatsApp blijft minstens 30 dagen na de laatste retreat open voor vragen tijdens het finetunen. De toolkit hou je voor altijd.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="qn">Q.05</span><span>Kan ik mijn bestaande site verbeteren in plaats van iets nieuws?</span><span class="qmark">+</span></summary>
+        <div class="answer">Ja, dat kan. Veel deelnemers komen met iets dat al bestaat maar niet meer klopt. We bouwen dan een nieuwe versie die je op het einde live zet ter vervanging.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span class="qn">Q.06</span><span>Krijg ik er ook copywriting bij?</span><span class="qmark">+</span></summary>
+        <div class="answer">Je krijgt de prompts, de structuur en de feedback om je eigen copy te schrijven. Ik schrijf de copy niet voor je. Wel sturen we hem samen bij tot hij klopt.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL ============== -->
+<section class="final" id="aanmelden">
+  <div class="corner"><b>IX.</b> Aanmelden</div>
+  <div class="wrap-narrow">
+    <p class="kicker"><span class="num">09</span> &nbsp;·&nbsp; Aanmelden</p>
+    <h2>Klaar om <em>dat ding</em><br>te bouwen?</h2>
+    <p>Eind augustus drukken we samen op publish. Tussen nu en dan bouwen we, lachen we, eten we, en pakken we eindelijk dat ding aan dat <em>al te lang op je lijstje staat.</em> Er zijn tien plekken. Als je voelt dat dit voor jou is, weet je me te vinden.</p>
+    <a href="https://laurenceuvin.plugandpay.nl/checkout/ai-summer-shift-2026" class="btn">
+      <span>Ja, ik wil mijn plek</span>
+      <svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg>
+    </a>
+    <div class="contact">Bij vragen vooraf: mail me gerust op <a href="mailto:hello@laurenceuvin.com">hello@laurenceuvin.com</a></div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Laurence<br><em>Uvin</em></div>
+      <div class="footer-tagline">AI Summer Shift · Été 2026<br>BORA · Zuienkerke · BE</div>
+    </div>
+    <div class="footer-col">
+      <h5>Programma</h5>
+      <a href="#waarom-nu">Waarom nu</a>
+      <a href="#programma">Drie retreats</a>
+      <a href="#bora">De plek</a>
+      <a href="#investering">Investering</a>
+    </div>
+    <div class="footer-col">
+      <h5>Praktisch</h5>
+      <a href="#faq">FAQ</a>
+      <a href="https://laurenceuvin.plugandpay.nl/checkout/ai-summer-shift-2026">Aanmelden</a>
+      <a href="mailto:hello@laurenceuvin.com">Vraag stellen</a>
+    </div>
+    <div class="footer-col">
+      <h5>Elders</h5>
+      <a href="#">CEO Lifestyle™ Podcast</a>
+      <a href="#">BORA Coworking</a>
+      <a href="#">The CEO Club</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>© 2026 Laurence Uvin · AI Summer Shift</span>
+    <span>BORA Coworking · Zuienkerke · België</span>
+    <span>hello@laurenceuvin.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
