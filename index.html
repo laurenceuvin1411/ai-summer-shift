@@ -417,9 +417,13 @@ p { color: var(--white-80); margin-bottom: 1em; }
 .hero-collage {
   margin-top: 90px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative; z-index: 2;
+  align-items: center;
 }
 .hero-collage .photo {
   aspect-ratio: 3 / 4;
@@ -432,9 +436,9 @@ p { color: var(--white-80); margin-bottom: 1em; }
   width: 100%; height: 100%; object-fit: cover;
   display: block;
 }
-.hero-collage .photo.tall { aspect-ratio: 3/4.4; }
-.hero-collage .photo:nth-child(2) { transform: translateY(-32px); }
-.hero-collage .photo:nth-child(3) { transform: translateY(18px); }
+.hero-collage .photo.tall { aspect-ratio: 3/4.2; }
+.hero-collage .photo:nth-child(1) { transform: translateY(-24px); }
+.hero-collage .photo:nth-child(2) { transform: translateY(24px); }
 .hero-collage .photo::after {
   content: attr(data-caption);
   position: absolute;
@@ -473,8 +477,8 @@ p { color: var(--white-80); margin-bottom: 1em; }
 @media (max-width: 900px) {
   .hero { padding-top: 140px; }
   .hero-pre { margin-bottom: 50px; }
-  .hero-collage { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 60px; }
-  .hero-collage .photo:nth-child(3) { display: none; }
+  .hero-collage { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 60px; max-width: 100%; }
+  .hero-collage .photo:nth-child(1),
   .hero-collage .photo:nth-child(2) { transform: translateY(0); }
   .hero-foot { grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 60px; padding-top: 40px; }
   .hero-foot > div:last-child { text-align: left; align-items: flex-start; }
@@ -1392,9 +1396,6 @@ footer {
 
   <!-- Photo collage -->
   <div class="wrap hero-collage blur-in d6">
-    <figure class="photo" data-caption="Bora · 2026">
-      <img src="images/group-two.jpg" alt="Laurence en mentor in actie" onerror="this.style.display='none'">
-    </figure>
     <figure class="photo tall" data-caption="Laurence Uvin">
       <img src="images/laurence-one.jpg" alt="Portret Laurence Uvin" onerror="this.style.display='none'">
     </figure>
