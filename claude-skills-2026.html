@@ -211,6 +211,8 @@ section { padding: 0 var(--gutter); position: relative; }
   padding: 18px 30px; border-radius: 999px; cursor: pointer; transition: all 0.3s; white-space: nowrap;
 }
 .gate button:hover { background: var(--peach); border-color: var(--peach); }
+.gate .gate-cta { display:inline-flex; align-items:center; gap:8px; background:var(--th-white); color:var(--th-black); border:1px solid var(--th-white); font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.04em; padding:20px 36px; border-radius:999px; cursor:pointer; transition:all 0.3s; text-decoration:none; }
+.gate .gate-cta:hover { background:var(--peach); border-color:var(--peach); transform:translateY(-1px); }
 .gate .micro {
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--white-40); margin-top: 20px;
@@ -366,14 +368,9 @@ footer {
     <div class="gate" id="gate">
       <p class="kicker"><span class="num">↓</span> Gratis gids</p>
       <h3>Wil je de <em>andere 17</em>?</h3>
-      <p class="gate-copy">Laat je e-mail achter en ik ontgrendel meteen de volledige lijst van 20 Claude skills, mét de directe links om ze te installeren.</p>
-      <form id="gate-form" novalidate>
-        <input type="text" name="voornaam" placeholder="Je voornaam" autocomplete="given-name" aria-label="Voornaam">
-        <input type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required aria-label="E-mailadres">
-        <button type="submit">Ontgrendel de gids</button>
-      </form>
-      <div class="err">Vul even een geldig e-mailadres in.</div>
-      <div class="micro">Geen spam. Enkel deze gids en af en toe iets dat ertoe doet.</div>
+      <p class="gate-copy">Laat via de knop hieronder je voornaam en mailadres achter, en de volledige lijst van 20 skills staat meteen voor je klaar, mét de directe links om ze te installeren.</p>
+      <a href="https://laurenceuvin.plugandpay.nl/checkout/mn-20-favoriete-ai-skills" id="gate-btn" class="gate-cta">Ontgrendel de gids&nbsp;&nbsp;→</a>
+      <div class="micro">Gratis. Geen spam, enkel deze gids en af en toe iets dat de moeite is.</div>
     </div>
 
     <div id="gated">
@@ -505,24 +502,16 @@ footer {
 <script>
 (function(){
   /* ===================================================================
-     PLUG&PAY KOPPELING
-     Plak hieronder de action-URL van je Plug&Pay opt-in formulier.
-     Pas eventueel de veldnamen aan (zie add('email',...) hieronder).
-     Laat leeg = de pagina ontgrendelt wel, maar e-mails worden nog
-     niet naar Plug&Pay verstuurd (handig om eerst te testen).
+     LEAD GATE — Plug&Pay opt-in
+     De knop stuurt naar de Plug&Pay-checkout, waar naam + e-mail in je
+     lijst belanden. Zet in Plug&Pay de "bedankt / redirect na inschrijving"
+     URL op:
+       https://laurenceuvin1411.github.io/ai-summer-shift/claude-skills-2026.html?unlocked=1
+     Wanneer iemand terugkomt met ?unlocked=1 ontgrendelt de gids, en blijft
+     'ie ontgrendeld bij volgende bezoeken.
      =================================================================== */
-  var PLUGANDPAY_OPTIN_ACTION = "";
-
-  /* VANGNET: elke inschrijving komt ook binnen op dit adres via FormSubmit
-     (geen account nodig). De allereerste inzending stuurt een activatie-mail
-     naar dit adres -- klik die EEN keer aan, daarna stromen alle leads
-     automatisch binnen. Laat leeg om uit te zetten. */
-  var FORMSUBMIT_EMAIL = "hello@laurenceuvin.com";
-
   var KEY  = "aiskills_unlocked";
   var body = document.body;
-  var gate = document.getElementById('gate');
-  var form = document.getElementById('gate-form');
 
   function unlock(scrollToContent){
     body.classList.add('unlocked');
@@ -532,56 +521,12 @@ footer {
     }
   }
 
-  /* Terugkerende bezoekers blijven ontgrendeld */
-  if (localStorage.getItem(KEY) === 'yes') unlock(false);
-
-  if (form) {
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var email = (form.email.value || '').trim();
-      var valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-      if (!valid) { gate.classList.add('show-err'); form.email.focus(); return; }
-      gate.classList.remove('show-err');
-      var voornaam = (form.voornaam.value || '').trim();
-
-      /* Vangnet: lead naar je inbox via FormSubmit (blokkeert de unlock niet) */
-      if (FORMSUBMIT_EMAIL) {
-        try {
-          fetch("https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_EMAIL), {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({
-              voornaam: voornaam,
-              email: email,
-              _subject: "Nieuwe download: 20 Claude Skills gids",
-              _template: "table"
-            })
-          }).catch(function(){});
-        } catch (err) {}
-      }
-
-      /* E-mail naar Plug&Pay sturen zonder de pagina te verlaten */
-      if (PLUGANDPAY_OPTIN_ACTION) {
-        try {
-          var sink = document.createElement('iframe');
-          sink.name = 'pnp_sink'; sink.style.display = 'none';
-          document.body.appendChild(sink);
-          var f = document.createElement('form');
-          f.method = 'POST'; f.action = PLUGANDPAY_OPTIN_ACTION; f.target = 'pnp_sink';
-          function add(name, value){
-            var i = document.createElement('input');
-            i.type = 'hidden'; i.name = name; i.value = value; f.appendChild(i);
-          }
-          add('email', email);
-          add('first_name', (form.voornaam.value || '').trim());
-          document.body.appendChild(f);
-          f.submit();
-        } catch (err) { /* stil falen, ontgrendel toch */ }
-      }
-
-      localStorage.setItem(KEY, 'yes');
-      unlock(true);
-    });
+  var cameFromOptin = new URLSearchParams(location.search).get('unlocked') === '1';
+  if (cameFromOptin) {
+    localStorage.setItem(KEY, 'yes');
+    unlock(true);
+  } else if (localStorage.getItem(KEY) === 'yes') {
+    unlock(false);
   }
 })();
 </script>
