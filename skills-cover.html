@@ -9,101 +9,64 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #191917;
-    --black-deep: #0e0e0c;
-    --white: #ffffff;
-    --w60: rgba(255,255,255,0.60);
-    --w40: rgba(255,255,255,0.40);
-    --w20: rgba(255,255,255,0.18);
-    --peach: #e89668;
-    --tan: #c4a684;
-    --sans: 'Satoshi','Helvetica Neue',Arial,sans-serif;
-    --mono: 'JetBrains Mono',ui-monospace,monospace;
+    --black:#191917; --black-deep:#0e0e0c; --white:#fff;
+    --w60:rgba(255,255,255,0.6); --w40:rgba(255,255,255,0.4); --w20:rgba(255,255,255,0.18);
+    --peach:#e89668; --tan:#c4a684;
+    --sans:'Satoshi','Helvetica Neue',Arial,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html,body { width:1280px; height:720px; overflow:hidden; }
-  body {
-    background: var(--black);
-    font-family: var(--sans);
-    color: var(--white);
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-  }
-  /* glows */
-  .glow-a { position:absolute; top:-220px; right:-160px; width:720px; height:720px;
-    background: radial-gradient(circle, rgba(232,150,104,0.20) 0%, transparent 62%); }
-  .glow-b { position:absolute; bottom:-260px; left:-180px; width:680px; height:680px;
-    background: radial-gradient(circle, rgba(196,166,132,0.14) 0%, transparent 62%); }
-  /* grain */
-  .grain { position:absolute; inset:0; opacity:0.07; mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1280px;height:720px;overflow:hidden;}
+  body{background:var(--black);font-family:var(--sans);color:var(--white);-webkit-font-smoothing:antialiased;position:relative;display:flex;}
 
-  .frame { position:absolute; inset:48px; display:flex; flex-direction:column; justify-content:space-between; z-index:2; }
+  /* LEFT — text panel */
+  .left{position:relative;width:58%;height:100%;padding:52px 0 52px 56px;display:flex;flex-direction:column;justify-content:space-between;z-index:2;}
+  .glow{position:absolute;top:120px;left:-60px;width:520px;height:520px;background:radial-gradient(circle,rgba(232,150,104,0.20) 0%,transparent 62%);pointer-events:none;}
+  .grain{position:absolute;inset:0;opacity:0.07;mix-blend-mode:overlay;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
 
-  /* top bar */
-  .top { display:flex; justify-content:space-between; align-items:flex-start;
-    padding-bottom:22px; border-bottom:1px solid var(--w20); }
-  .top .l, .top .r { font-family:var(--mono); font-size:13px; letter-spacing:0.24em; text-transform:uppercase; color:var(--w60); }
-  .top .r { text-align:right; }
-  .top .l b, .top .r b { color:var(--white); font-weight:500; }
+  .top-l{font-family:var(--mono);font-size:13px;letter-spacing:0.24em;text-transform:uppercase;color:var(--w60);position:relative;z-index:2;}
+  .top-l b{color:var(--white);font-weight:500;}
 
-  /* center */
-  .center { display:flex; justify-content:space-between; align-items:center; gap:40px; }
-  .headline { }
-  .eyebrow { font-family:var(--mono); font-size:14px; letter-spacing:0.3em; text-transform:uppercase; color:var(--peach); margin-bottom:26px; }
-  h1 { font-size:138px; font-weight:500; line-height:0.9; letter-spacing:-0.05em; text-transform:uppercase; }
-  h1 .row2 { display:block; }
-  h1 .dot { color:var(--peach); }
-  .sub { margin-top:30px; font-size:25px; font-style:italic; font-weight:400; color:rgba(255,255,255,0.86); letter-spacing:-0.01em; }
+  .mid{position:relative;z-index:2;}
+  .eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:0.3em;text-transform:uppercase;color:var(--peach);margin-bottom:22px;}
+  h1{font-size:118px;font-weight:500;line-height:0.88;letter-spacing:-0.05em;text-transform:uppercase;}
+  h1 .r2{display:block;}
+  h1 .dot{color:var(--peach);}
+  .sub{margin-top:26px;font-size:22px;font-style:italic;color:rgba(255,255,255,0.86);letter-spacing:-0.01em;}
 
-  /* index column */
-  .index { font-family:var(--mono); font-size:12px; letter-spacing:0.18em; color:var(--w40); text-align:right; line-height:2.0; white-space:nowrap; }
-  .index b { color:var(--w60); font-weight:500; }
+  .brand{position:relative;z-index:2;font-size:26px;font-weight:500;letter-spacing:-0.03em;}
+  .brand em{font-style:italic;color:var(--tan);}
+  .brand .role{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--w60);margin-top:7px;font-weight:400;}
 
-  /* bottom bar */
-  .bottom { display:flex; justify-content:space-between; align-items:flex-end;
-    padding-top:22px; border-top:1px solid var(--w20); }
-  .brand { font-size:30px; font-weight:500; letter-spacing:-0.03em; }
-  .brand em { font-style:italic; color:var(--tan); }
-  .brand .role { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--w60); margin-top:8px; font-weight:400; }
-  .url { font-family:var(--mono); font-size:14px; letter-spacing:0.16em; text-transform:uppercase; color:var(--white); }
-  .pill { display:inline-flex; align-items:center; gap:10px; border:1px solid var(--w20); border-radius:999px; padding:10px 18px; }
-  .pill .dotg { width:8px; height:8px; border-radius:50%; background:var(--peach); }
+  /* RIGHT — real photo */
+  .right{position:absolute;top:0;right:0;width:46%;height:100%;overflow:hidden;}
+  .right img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
+  /* blend the photo's white studio bg into the dark panel on its left edge */
+  .right::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, var(--black) 0%, rgba(25,25,23,0.0) 26%);}
+  .tagpill{position:absolute;bottom:30px;right:30px;z-index:3;font-family:var(--mono);font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);
+    display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;padding:9px 16px;background:rgba(25,25,23,0.35);backdrop-filter:blur(4px);}
+  .tagpill .d{width:7px;height:7px;border-radius:50%;background:var(--peach);}
 </style>
 </head>
 <body>
-  <div class="glow-a"></div>
-  <div class="glow-b"></div>
-  <div class="grain"></div>
-
-  <div class="frame">
-    <div class="top">
-      <div class="l"><b>Gratis gids</b> · Claude Code</div>
-      <div class="r">Été 2026 · <b>No. 01</b></div>
+  <div class="left">
+    <div class="glow"></div>
+    <div class="grain"></div>
+    <div class="top-l"><b>Gratis gids</b> · Claude Code · 2026</div>
+    <div class="mid">
+      <div class="eyebrow">De AI Skills Gids</div>
+      <h1>20 Claude<span class="r2">Skills<span class="dot">.</span></span></h1>
+      <div class="sub">die ik deze zomer zou installeren</div>
     </div>
-
-    <div class="center">
-      <div class="headline">
-        <div class="eyebrow">De AI Skills Gids</div>
-        <h1>20 Claude<span class="row2">Skills<span class="dot">.</span></span></h1>
-        <div class="sub">die ik deze zomer zou installeren</div>
-      </div>
-      <div class="index">
-        <b>01</b> Marketing Skills<br>
-        <b>02</b> Stop-Slop<br>
-        <b>03</b> UI/UX Pro Max<br>
-        <b>04</b> Remotion Video<br>
-        <b>05</b> Context Kit<br>
-        <span style="color:rgba(255,255,255,0.3)">＋ 15 andere</span>
-      </div>
+    <div class="brand">Laurence <em>Uvin</em>
+      <div class="role">Founder · BORA · CEO Lifestyle™</div>
     </div>
-
-    <div class="bottom">
-      <div class="brand">Laurence <em>Uvin</em>
-        <div class="role">Founder · BORA · CEO Lifestyle™</div>
-      </div>
-      <div class="url"><span class="pill"><span class="dotg"></span>laurenceuvin.com</span></div>
-    </div>
+  </div>
+  <div class="right">
+    <img src="images/laurence-one.jpg" alt="Laurence Uvin">
+    <span class="tagpill"><span class="d"></span>laurenceuvin.com</span>
   </div>
 </body>
 </html>
