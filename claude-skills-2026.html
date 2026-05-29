@@ -164,6 +164,15 @@ section { padding: 0 var(--gutter); position: relative; }
 }
 .skill-body p { font-size: 16.5px; line-height: 1.65; color: var(--white-80); margin: 0; }
 .skill-body p em { font-style: italic; color: var(--white-90); }
+.skill-src {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--white-60); transition: color 0.2s; word-break: break-all;
+}
+.skill-src::before { content: "↗"; font-size: 12px; color: var(--peach); }
+.skill-src:hover { color: var(--peach); }
+.skill-src.none { color: var(--white-40); }
+.skill-src.none::before { content: "—"; color: var(--white-40); }
 @media (max-width: 700px) {
   .skill { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
   .skill-num { padding-top: 0; }
@@ -293,101 +302,121 @@ footer {
     <article class="skill"><div class="skill-num">01</div><div class="skill-body">
       <h3>Marketing Skills</h3>
       <p>Meer dan dertig marketing-agents in één pakket: SEO, copywriting, advertenties, e-mailflows. Het voelt alsof je een heel marketingteam naast je hebt zitten, behalve dat het er om drie uur 's nachts ook nog is. Voor wie alles zelf doet, is dit waar ik zou beginnen.</p>
+      <a class="skill-src" href="https://github.com/coreyhaines31/marketingskills" target="_blank" rel="noopener">github.com/coreyhaines31/marketingskills</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">02</div><div class="skill-body">
       <h3>Stop-Slop</h3>
       <p>Je kent dat AI-toontje wel. Dat gladde, brave, iedereen-klinkt-hetzelfde toontje. Deze skill haalt het eruit. Wat overblijft klinkt terug als een mens. <em>Als jou.</em></p>
+      <a class="skill-src" href="https://github.com/hardikpandya/stop-slop" target="_blank" rel="noopener">github.com/hardikpandya/stop-slop</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">03</div><div class="skill-body">
       <h3>UI/UX Pro Max</h3>
       <p>Een hele bibliotheek aan designstijlen, kleurenpaletten en lettercombinaties. Wanneer je website "een beetje af" voelt maar je niet kan zeggen waarom, doet deze het werk dat een designer in je hoofd zou doen.</p>
+      <a class="skill-src" href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">04</div><div class="skill-body">
       <h3>Remotion Video</h3>
       <p>Maakt animatievideo's vanuit tekst. Je typt wat je wil, je krijgt een afgewerkte video terug. Voor reels, intro's en uitleg-animaties zonder ooit een editor te openen.</p>
+      <a class="skill-src" href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">github.com/remotion-dev/skills</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">05</div><div class="skill-body">
       <h3>Context Engineering Kit</h3>
       <p>Minder tokens per antwoord, dus sneller en goedkoper werken. Klinkt technisch, voelt gewoon als ademruimte. Je AI blijft scherp zonder traag te worden.</p>
+      <a class="skill-src" href="https://github.com/NeoLabHQ/context-engineering-kit" target="_blank" rel="noopener">github.com/NeoLabHQ/context-engineering-kit</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">06</div><div class="skill-body">
       <h3>Arcads</h3>
       <p>AI-marketingvideo's en beelden via meerdere modellen tegelijk. Handig wanneer je content nodig hebt die er duur uitziet zonder dat je een hele productie moet opzetten.</p>
+      <a class="skill-src" href="https://github.com/krusemediallc/arcads-claude-code" target="_blank" rel="noopener">github.com/krusemediallc/arcads-claude-code</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">07</div><div class="skill-body">
       <h3>Superpowers</h3>
       <p>Een community-framework voor de volledige software-cyclus, van idee tot afgewerkt product. Dit is de zware artillerie: voor wie écht iets wil bouwen, niet enkel een pagina.</p>
+      <a class="skill-src" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">08</div><div class="skill-body">
       <h3>Picsart GenAI CLI</h3>
       <p>Toegang tot meer dan honderdveertig AI-modellen voor beeld en creatie. Eén plek, alle tools. Voor wie graag speelt tot het juist voelt.</p>
+      <a class="skill-src" href="https://picsart.com/gen-ai-cli/" target="_blank" rel="noopener">picsart.com/gen-ai-cli</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">09</div><div class="skill-body">
       <h3>AI Sales Team</h3>
       <p>Agents die prospecten onderzoeken en je pipeline opvolgen. Niet om je verkoop over te nemen, wel om het saaie voorwerk te doen zodat jij de gesprekken kan voeren die er echt toe doen.</p>
+      <a class="skill-src" href="https://github.com/zubair-trabzada/ai-sales-team-claude" target="_blank" rel="noopener">github.com/zubair-trabzada/ai-sales-team-claude</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">10</div><div class="skill-body">
       <h3>Obsidian Second Brain</h3>
       <p>Verandert je notitie-vault in een AI-brein dat je eigen denken kent. Alles wat je ooit opschreef wordt opeens doorzoekbaar en bruikbaar. Voor de multi-passionate die overal ideeën laat slingeren.</p>
+      <span class="skill-src none">Zoek op "Obsidian Second Brain skill"</span>
     </div></article>
 
     <article class="skill"><div class="skill-num">11</div><div class="skill-body">
       <h3>Trail of Bits Security</h3>
       <p>Professionele security-analyse die kwetsbaarheden opspoort. Als je iets bouwt waar mensen op inloggen of betalen, wil je deze laten meekijken voor je live gaat.</p>
+      <a class="skill-src" href="https://github.com/trailofbits/skills" target="_blank" rel="noopener">github.com/trailofbits/skills</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">12</div><div class="skill-body">
       <h3>Caveman Mode</h3>
       <p>Comprimeert de output tot het strikt noodzakelijke. Minder woorden, minder tokens, meer snelheid. Voor wanneer je geen verhaal wil, gewoon het antwoord.</p>
+      <a class="skill-src" href="https://github.com/juliusbrussee/caveman" target="_blank" rel="noopener">github.com/juliusbrussee/caveman</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">13</div><div class="skill-body">
       <h3>Playwright Skill</h3>
       <p>Browser-automatisatie en testen. Laat je AI je website nalopen alsof het een echte bezoeker is: klikt alles, werkt alles, breekt er niets. Precies wat je wil checken voor je publiceert.</p>
+      <a class="skill-src" href="https://github.com/lackeyjb/playwright-skill" target="_blank" rel="noopener">github.com/lackeyjb/playwright-skill</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">14</div><div class="skill-body">
       <h3>SEO Machine</h3>
       <p>Een aparte werkruimte voor SEO-blogcontent. Voor wie gevonden wil worden zonder elke week te verdwijnen in een keyword-tool.</p>
+      <a class="skill-src" href="https://github.com/TheCraigHewitt/seomachine" target="_blank" rel="noopener">github.com/TheCraigHewitt/seomachine</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">15</div><div class="skill-body">
       <h3>Entrepreneur Skills</h3>
       <p>Vierentwintig workflows op maat van founders. Van pricing tot pitch tot planning. Het soort dingen waar je normaal een mentor voor belt.</p>
+      <a class="skill-src" href="https://github.com/mfwarren/entrepreneur-claude-skills" target="_blank" rel="noopener">github.com/mfwarren/entrepreneur-claude-skills</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">16</div><div class="skill-body">
       <h3>D3.js Visualization</h3>
       <p>Maakt interactieve datavisualisaties. Wanneer je cijfers iets moeten zeggen in plaats van alleen maar staan, brengt deze ze tot leven.</p>
+      <a class="skill-src" href="https://github.com/chrisvoncsefalvay/claude-d3js-skill" target="_blank" rel="noopener">github.com/chrisvoncsefalvay/claude-d3js-skill</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">17</div><div class="skill-body">
       <h3>iOS Simulator Skill</h3>
       <p>Bouwt en test iOS-apps. Voor wie verder durft denken dan een website, richting een echt product in iemands broekzak.</p>
+      <a class="skill-src" href="https://github.com/conorluddy/ios-simulator-skill" target="_blank" rel="noopener">github.com/conorluddy/ios-simulator-skill</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">18</div><div class="skill-body">
       <h3>Frontend Slides</h3>
       <p>Maakt presentaties in HTML met animaties. Pitchdecks die niet aanvoelen als de zoveelste PowerPoint. Voor wanneer je verhaal een podium verdient.</p>
+      <a class="skill-src" href="https://github.com/zarazhangrui/frontend-slides" target="_blank" rel="noopener">github.com/zarazhangrui/frontend-slides</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">19</div><div class="skill-body">
       <h3>Algorithmic Art</h3>
       <p>Generatieve kunst met p5.js. Pure speelruimte. Soms is de beste manier om een tool te leren kennen, er gewoon iets moois mee maken dat nergens voor dient.</p>
+      <a class="skill-src" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a>
     </div></article>
 
     <article class="skill"><div class="skill-num">20</div><div class="skill-body">
       <h3>React Native Agent Skills</h3>
       <p>De officiële toolkit voor React Native. Voor het moment dat je website een app wil worden.</p>
+      <a class="skill-src" href="https://github.com/callstackincubator/agent-skills" target="_blank" rel="noopener">github.com/callstackincubator/agent-skills</a>
     </div></article>
 
   </div>
