@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>20 Claude skills die ik zou installeren in 2026 — Laurence Uvin</title>
+<meta name="description" content="Geen code, geen plug-ins waar je in verdrinkt. De twintig Claude skills die ik zelf zou installeren als ik vandaag opnieuw begon te bouwen." />
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900,301,401,501,701&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --th-black:      #191917;
+  --th-black-deep: #0e0e0c;
+  --th-black-soft: #232220;
+  --th-white:      #ffffff;
+  --th-grey-light: #f3f3f3;
+
+  --white-90: rgba(255,255,255,0.92);
+  --white-80: rgba(255,255,255,0.82);
+  --white-60: rgba(255,255,255,0.60);
+  --white-40: rgba(255,255,255,0.40);
+  --white-20: rgba(255,255,255,0.18);
+  --white-10: rgba(255,255,255,0.08);
+
+  --warm-tan:  #c4a684;
+  --peach:     #e89668;
+
+  --sans:  'Satoshi', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --mono:  'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --gutter: clamp(22px, 4vw, 56px);
+  --maxw:   1480px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--th-black); }
+body {
+  background: var(--th-black);
+  color: var(--th-white);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--warm-tan); color: var(--th-black); }
+
+/* TOP BAR */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 24px var(--gutter);
+  background: linear-gradient(180deg, rgba(25,25,23,0.82) 0%, rgba(25,25,23,0.4) 70%, transparent 100%);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.topbar-inner {
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px;
+}
+.topbar-left { font-size: 14px; font-weight: 500; }
+.topbar-left .sub {
+  display: block; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--white-60); margin-top: 4px;
+}
+.topbar-center { font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; font-weight: 500; }
+.topbar-right { justify-self: end; display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+.topbar-right a { transition: color 0.2s; }
+.topbar-right a:hover { color: var(--white-60); }
+@media (max-width: 900px) {
+  .topbar { padding: 18px 22px; }
+  .topbar-inner { grid-template-columns: 1fr auto; gap: 16px; }
+  .topbar-left .sub { display: none; }
+  .topbar-right { display: none; }
+}
+
+section { padding: 0 var(--gutter); position: relative; }
+.wrap-narrow { max-width: 820px; margin: 0 auto; }
+
+.kicker {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--white-60);
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.kicker::before { content: ""; width: 32px; height: 1px; background: var(--peach); }
+.kicker .num { color: var(--peach); font-weight: 500; }
+
+/* ARTICLE HERO */
+.art-hero {
+  padding-top: 180px; padding-bottom: 90px;
+  border-bottom: 1px solid var(--white-10);
+}
+.art-meta {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--white-60);
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 44px;
+}
+.art-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--white-40); }
+.art-hero h1 {
+  font-size: clamp(40px, 7vw, 96px);
+  font-weight: 500; letter-spacing: -0.045em; line-height: 0.98;
+  text-transform: uppercase; margin-bottom: 36px;
+}
+.art-hero h1 em { font-style: italic; color: var(--peach); font-weight: 500; }
+.art-sub {
+  font-size: clamp(19px, 2vw, 24px); line-height: 1.45; color: var(--white-80);
+  max-width: 52ch; font-weight: 400; letter-spacing: -0.01em;
+}
+.art-sub em { font-style: italic; }
+
+/* BODY */
+.art-body { padding-top: 90px; padding-bottom: 60px; }
+.art-body p { font-size: 18px; line-height: 1.7; color: var(--white-80); margin-bottom: 1.5em; }
+.art-body p .lead-first { }
+.art-body p:first-of-type::first-letter {
+  font-size: 4.6em; float: left; line-height: 0.8; padding: 6px 14px 0 0;
+  color: var(--peach); font-weight: 500; font-style: italic;
+}
+.art-body strong { color: var(--th-white); font-weight: 500; }
+.art-body em { font-style: italic; }
+
+/* INSTALL BOX */
+.install {
+  margin: 50px 0 20px; padding: 40px;
+  border: 1px solid var(--white-10); border-radius: 4px;
+  background: var(--th-black-soft);
+}
+.install .kicker { margin-bottom: 24px; }
+.install ol { list-style: none; counter-reset: step; }
+.install li {
+  counter-increment: step; position: relative; padding: 14px 0 14px 50px;
+  border-bottom: 1px solid var(--white-10); font-size: 16px; line-height: 1.5; color: var(--white-80);
+}
+.install li:last-child { border-bottom: none; }
+.install li::before {
+  content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--peach); font-weight: 500;
+}
+
+/* SKILLS LIST */
+.skills { padding-top: 40px; padding-bottom: 100px; }
+.skills-head { margin-bottom: 30px; }
+.skills-head h2 {
+  font-size: clamp(28px, 4vw, 52px); font-weight: 500; letter-spacing: -0.035em;
+  text-transform: uppercase; line-height: 1; margin-top: 24px;
+}
+.skill {
+  display: grid; grid-template-columns: 80px 1fr; gap: 28px;
+  padding: 40px 0; border-bottom: 1px solid var(--white-10); align-items: start;
+}
+.skill:first-of-type { border-top: 1px solid var(--white-10); }
+.skill-num {
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em;
+  color: var(--peach); font-weight: 500; padding-top: 8px;
+}
+.skill-body h3 {
+  font-size: clamp(22px, 2.6vw, 30px); font-weight: 500; letter-spacing: -0.025em;
+  margin-bottom: 12px; line-height: 1.1;
+}
+.skill-body p { font-size: 16.5px; line-height: 1.65; color: var(--white-80); margin: 0; }
+.skill-body p em { font-style: italic; color: var(--white-90); }
+@media (max-width: 700px) {
+  .skill { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
+  .skill-num { padding-top: 0; }
+}
+
+/* CTA CARD */
+.cta-card {
+  padding-bottom: 140px;
+}
+.cta-card .inner {
+  background: var(--th-grey-light); color: var(--th-black);
+  border-radius: 4px; padding: clamp(40px, 6vw, 80px); text-align: center; position: relative; overflow: hidden;
+}
+.cta-card .kicker { color: rgba(25,25,23,0.6); justify-content: center; }
+.cta-card .kicker::before { background: var(--th-black); }
+.cta-card .kicker .num { color: var(--th-black); }
+.cta-card h2 {
+  font-size: clamp(34px, 5.5vw, 72px); font-weight: 500; letter-spacing: -0.04em;
+  text-transform: uppercase; line-height: 0.96; margin: 28px auto 28px; max-width: 18ch;
+}
+.cta-card h2 em { font-style: italic; color: rgba(25,25,23,0.45); font-weight: 500; }
+.cta-card p {
+  font-size: 18px; line-height: 1.6; color: rgba(25,25,23,0.82); max-width: 52ch;
+  margin: 0 auto 40px;
+}
+.cta-card p em { font-style: italic; }
+.btn {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--th-black); color: var(--th-white);
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  padding: 22px 32px; border: 1px solid var(--th-black); border-radius: 999px;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer;
+}
+.btn:hover { background: transparent; color: var(--th-black); }
+.btn .arrow { width: 22px; height: 8px; transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1); }
+.btn:hover .arrow { transform: translateX(6px); }
+
+/* FOOTER */
+footer {
+  padding: 80px var(--gutter) 30px; background: var(--th-black-deep);
+  color: var(--white-60); font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase; border-top: 1px solid var(--white-10);
+}
+.footer-inner {
+  max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between;
+  align-items: baseline; flex-wrap: wrap; gap: 20px; padding-bottom: 40px; border-bottom: 1px solid var(--white-10);
+}
+.footer-logo {
+  font-family: var(--sans); font-style: italic; font-weight: 500; font-size: 28px;
+  color: var(--th-white); text-transform: none; letter-spacing: -0.02em;
+}
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { color: var(--th-white); text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
+.footer-links a:hover { color: var(--warm-tan); }
+.footer-meta { max-width: var(--maxw); margin: 30px auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--white-40); font-size: 10px; }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(18px); animation: rev 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+@keyframes rev { to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; animation: none; } }
+</style>
+</head>
+
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      Resources
+      <span class="sub">Laurence Uvin · 2026</span>
+    </div>
+    <a href="index.html" class="topbar-center">LAURENCE&nbsp;&nbsp;UVIN</a>
+    <div class="topbar-right">
+      <a href="index.html">AI Summer Shift</a>
+      <a href="mailto:hello@laurenceuvin.com">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ARTICLE HERO -->
+<section class="art-hero">
+  <div class="wrap-narrow">
+    <div class="art-meta reveal">
+      <span>Resources / AI</span>
+      <span class="dot"></span>
+      <span>6 min lezen</span>
+      <span class="dot"></span>
+      <span>Mei 2026</span>
+    </div>
+    <h1 class="reveal">20 Claude skills die ik zou <em>installeren</em> in 2026</h1>
+    <p class="art-sub reveal">Geen code. Geen plug-ins waar je in verdrinkt. Wel een handvol kleine instructiebestanden die je AI plots specialist maken in precies dat ene ding.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="art-body">
+  <div class="wrap-narrow">
+    <p>Een half jaar geleden bouwde ik nog niets zelf. Ik wachtte op offertes, op developers, op "als ik straks tijd heb". En toen begreep ik eindelijk wat een skill is, en veranderde mijn manier van werken volledig.</p>
+
+    <p>Even in mensentaal: een <strong>skill</strong> is een klein instructiebestand dat je aan Claude geeft. En plots kan hij iets wat hij daarvoor niet kon. Geen ingewikkelde setup, geen handleiding van veertig pagina's. Je voegt het toe in seconden, en je AI is opeens specialist in copy, in design, in SEO, in security, in precies dat waar jij hulp bij wil.</p>
+
+    <p>Ik gebruik ze nu elke dag. Voor mijn teksten, mijn beelden, mijn websites. Het mooie eraan: ze zijn grotendeels gratis en open source. Je hoeft geen tech-persoon te zijn om ze te gebruiken, je moet gewoon weten wat je wil maken.</p>
+
+    <p>Dit zijn de twintig die ik zelf zou installeren als ik vandaag opnieuw begon. Niet om ze allemaal tegelijk te gebruiken, wel om te weten wat er bestaat.</p>
+
+    <div class="install">
+      <p class="kicker"><span class="num">↓</span> Hoe je een skill installeert</p>
+      <ol>
+        <li>Je opent Claude Code, in je terminal of in de app.</li>
+        <li>Je voegt de skill toe via de marketplace, of je plaatst het bestand in je skills-map.</li>
+        <li>Claude pikt het automatisch op. Vanaf dan kan hij wat de skill hem leert.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills">
+  <div class="wrap-narrow">
+    <div class="skills-head">
+      <p class="kicker"><span class="num">01—20</span> De lijst</p>
+      <h2>Twintig skills, <br>één per ding dat je wil maken</h2>
+    </div>
+
+    <article class="skill"><div class="skill-num">01</div><div class="skill-body">
+      <h3>Marketing Skills</h3>
+      <p>Meer dan dertig marketing-agents in één pakket: SEO, copywriting, advertenties, e-mailflows. Het voelt alsof je een heel marketingteam naast je hebt zitten, behalve dat het er om drie uur 's nachts ook nog is. Voor wie alles zelf doet, is dit waar ik zou beginnen.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">02</div><div class="skill-body">
+      <h3>Stop-Slop</h3>
+      <p>Je kent dat AI-toontje wel. Dat gladde, brave, iedereen-klinkt-hetzelfde toontje. Deze skill haalt het eruit. Wat overblijft klinkt terug als een mens. <em>Als jou.</em></p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">03</div><div class="skill-body">
+      <h3>UI/UX Pro Max</h3>
+      <p>Een hele bibliotheek aan designstijlen, kleurenpaletten en lettercombinaties. Wanneer je website "een beetje af" voelt maar je niet kan zeggen waarom, doet deze het werk dat een designer in je hoofd zou doen.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">04</div><div class="skill-body">
+      <h3>Remotion Video</h3>
+      <p>Maakt animatievideo's vanuit tekst. Je typt wat je wil, je krijgt een afgewerkte video terug. Voor reels, intro's en uitleg-animaties zonder ooit een editor te openen.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">05</div><div class="skill-body">
+      <h3>Context Engineering Kit</h3>
+      <p>Minder tokens per antwoord, dus sneller en goedkoper werken. Klinkt technisch, voelt gewoon als ademruimte. Je AI blijft scherp zonder traag te worden.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">06</div><div class="skill-body">
+      <h3>Arcads</h3>
+      <p>AI-marketingvideo's en beelden via meerdere modellen tegelijk. Handig wanneer je content nodig hebt die er duur uitziet zonder dat je een hele productie moet opzetten.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">07</div><div class="skill-body">
+      <h3>Superpowers</h3>
+      <p>Een community-framework voor de volledige software-cyclus, van idee tot afgewerkt product. Dit is de zware artillerie: voor wie écht iets wil bouwen, niet enkel een pagina.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">08</div><div class="skill-body">
+      <h3>Picsart GenAI CLI</h3>
+      <p>Toegang tot meer dan honderdveertig AI-modellen voor beeld en creatie. Eén plek, alle tools. Voor wie graag speelt tot het juist voelt.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">09</div><div class="skill-body">
+      <h3>AI Sales Team</h3>
+      <p>Agents die prospecten onderzoeken en je pipeline opvolgen. Niet om je verkoop over te nemen, wel om het saaie voorwerk te doen zodat jij de gesprekken kan voeren die er echt toe doen.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">10</div><div class="skill-body">
+      <h3>Obsidian Second Brain</h3>
+      <p>Verandert je notitie-vault in een AI-brein dat je eigen denken kent. Alles wat je ooit opschreef wordt opeens doorzoekbaar en bruikbaar. Voor de multi-passionate die overal ideeën laat slingeren.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">11</div><div class="skill-body">
+      <h3>Trail of Bits Security</h3>
+      <p>Professionele security-analyse die kwetsbaarheden opspoort. Als je iets bouwt waar mensen op inloggen of betalen, wil je deze laten meekijken voor je live gaat.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">12</div><div class="skill-body">
+      <h3>Caveman Mode</h3>
+      <p>Comprimeert de output tot het strikt noodzakelijke. Minder woorden, minder tokens, meer snelheid. Voor wanneer je geen verhaal wil, gewoon het antwoord.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">13</div><div class="skill-body">
+      <h3>Playwright Skill</h3>
+      <p>Browser-automatisatie en testen. Laat je AI je website nalopen alsof het een echte bezoeker is: klikt alles, werkt alles, breekt er niets. Precies wat je wil checken voor je publiceert.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">14</div><div class="skill-body">
+      <h3>SEO Machine</h3>
+      <p>Een aparte werkruimte voor SEO-blogcontent. Voor wie gevonden wil worden zonder elke week te verdwijnen in een keyword-tool.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">15</div><div class="skill-body">
+      <h3>Entrepreneur Skills</h3>
+      <p>Vierentwintig workflows op maat van founders. Van pricing tot pitch tot planning. Het soort dingen waar je normaal een mentor voor belt.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">16</div><div class="skill-body">
+      <h3>D3.js Visualization</h3>
+      <p>Maakt interactieve datavisualisaties. Wanneer je cijfers iets moeten zeggen in plaats van alleen maar staan, brengt deze ze tot leven.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">17</div><div class="skill-body">
+      <h3>iOS Simulator Skill</h3>
+      <p>Bouwt en test iOS-apps. Voor wie verder durft denken dan een website, richting een echt product in iemands broekzak.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">18</div><div class="skill-body">
+      <h3>Frontend Slides</h3>
+      <p>Maakt presentaties in HTML met animaties. Pitchdecks die niet aanvoelen als de zoveelste PowerPoint. Voor wanneer je verhaal een podium verdient.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">19</div><div class="skill-body">
+      <h3>Algorithmic Art</h3>
+      <p>Generatieve kunst met p5.js. Pure speelruimte. Soms is de beste manier om een tool te leren kennen, er gewoon iets moois mee maken dat nergens voor dient.</p>
+    </div></article>
+
+    <article class="skill"><div class="skill-num">20</div><div class="skill-body">
+      <h3>React Native Agent Skills</h3>
+      <p>De officiële toolkit voor React Native. Voor het moment dat je website een app wil worden.</p>
+    </div></article>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-card">
+  <div class="wrap-narrow">
+    <div class="inner">
+      <p class="kicker"><span class="num">→</span> En nu?</p>
+      <h2>Je hoeft ze niet <em>alle twintig</em> te installeren</h2>
+      <p>Begin bij die ene die je vandaag iets oplevert. Zo deed ik het ook: niet alles tegelijk, wel één tool die werkt, en dan de volgende. En als je voelt dat je dit zelf wil leren, maar niet alleen vanaf je zolderkamer, dan is dat precies waarom ik deze zomer de <em>AI Summer Shift</em> doe. Drie halve dagen op BORA, tien ondernemers, je website af in zes weken. Met Claude Code als je co-founder.</p>
+      <a href="index.html" class="btn">
+        <span>Ontdek de AI Summer Shift</span>
+        <svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Laurence <span style="color:var(--warm-tan)">Uvin</span></div>
+    <div class="footer-links">
+      <a href="index.html">AI Summer Shift</a>
+      <a href="mailto:hello@laurenceuvin.com">Contact</a>
+      <a href="#">CEO Lifestyle™</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <span>© 2026 Laurence Uvin</span>
+    <span>BORA Coworking · Zuienkerke · België</span>
+    <span>hello@laurenceuvin.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
