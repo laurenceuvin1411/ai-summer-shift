@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900,501&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#191917;--white:#fff;--w60:rgba(255,255,255,0.6);--peach:#e89668;--tan:#c4a684;
+    --sans:'Satoshi','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{background:var(--black);font-family:var(--sans);color:var(--white);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;}
+  .photo{position:relative;height:560px;overflow:hidden;}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block;}
+  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,25,23,0) 60%,var(--black) 100%);}
+  .photo .top{position:absolute;top:36px;left:44px;right:44px;z-index:2;display:flex;justify-content:space-between;font-family:var(--mono);font-size:15px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);}
+  .photo .top .pill{border:1px solid rgba(255,255,255,0.4);border-radius:999px;padding:9px 16px;background:rgba(25,25,23,0.3);backdrop-filter:blur(4px);}
+  .panel{flex:1;padding:8px 48px 48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;}
+  .glow{position:absolute;bottom:-80px;left:-80px;width:460px;height:460px;background:radial-gradient(circle,rgba(232,150,104,0.18),transparent 62%);pointer-events:none;}
+  .eyebrow{font-family:var(--mono);font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--peach);margin-bottom:18px;position:relative;z-index:2;}
+  h1{font-size:104px;font-weight:500;line-height:0.86;letter-spacing:-0.05em;text-transform:uppercase;position:relative;z-index:2;}
+  h1 .r2{display:block;}
+  h1 .dot{color:var(--peach);}
+  .sub{margin-top:22px;font-size:26px;font-style:italic;color:rgba(255,255,255,0.88);position:relative;z-index:2;}
+  .brand{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2;border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;margin-top:26px;}
+  .brand .name{font-size:30px;font-weight:500;letter-spacing:-0.03em;}
+  .brand .name em{font-style:italic;color:var(--tan);}
+  .brand .url{font-family:var(--mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;color:var(--w60);}
+</style>
+</head>
+<body>
+  <div class="photo">
+    <img src="images/laurence-one.jpg" alt="Laurence Uvin">
+    <div class="top"><span>Gratis gids</span><span class="pill">Claude Code</span></div>
+  </div>
+  <div class="panel">
+    <div class="glow"></div>
+    <div>
+      <div class="eyebrow">De AI Skills Gids</div>
+      <h1>20 Claude<span class="r2">Skills<span class="dot">.</span></span></h1>
+      <div class="sub">die ik deze zomer zou installeren</div>
+    </div>
+    <div class="brand">
+      <div class="name">Laurence <em>Uvin</em></div>
+      <div class="url">laurenceuvin.com</div>
+    </div>
+  </div>
+</body>
+</html>
