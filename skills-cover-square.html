@@ -8,45 +8,55 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--black:#191917;--white:#fff;--w60:rgba(255,255,255,0.6);--peach:#e89668;--tan:#c4a684;
-    --sans:'Satoshi','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
+  :root{--black:#191917;--white:#fff;--w60:rgba(255,255,255,0.6);--w40:rgba(255,255,255,0.4);
+    --peach:#e89668;--tan:#c4a684;--sans:'Satoshi','Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html,body{width:1080px;height:1080px;overflow:hidden;}
-  body{background:var(--black);font-family:var(--sans);color:var(--white);-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;}
-  .photo{position:relative;height:600px;overflow:hidden;}
-  .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;transform:scale(1.22);transform-origin:50% 30%;}
-  .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,25,23,0) 60%,var(--black) 100%);}
-  .photo .top{position:absolute;top:36px;left:44px;right:44px;z-index:2;display:flex;justify-content:space-between;font-family:var(--mono);font-size:15px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white);}
-  .photo .top .pill{border:1px solid rgba(255,255,255,0.4);border-radius:999px;padding:9px 16px;background:rgba(25,25,23,0.3);backdrop-filter:blur(4px);}
-  .panel{flex:1;padding:8px 48px 48px;display:flex;flex-direction:column;justify-content:space-between;position:relative;}
-  .glow{position:absolute;bottom:-80px;left:-80px;width:460px;height:460px;background:radial-gradient(circle,rgba(232,150,104,0.18),transparent 62%);pointer-events:none;}
-  .eyebrow{font-family:var(--mono);font-size:16px;letter-spacing:0.3em;text-transform:uppercase;color:var(--peach);margin-bottom:18px;position:relative;z-index:2;}
-  h1{font-size:104px;font-weight:500;line-height:0.86;letter-spacing:-0.05em;text-transform:uppercase;position:relative;z-index:2;}
+  body{background:var(--black);font-family:var(--sans);color:var(--white);-webkit-font-smoothing:antialiased;position:relative;display:flex;}
+
+  /* LEFT — text */
+  .left{position:relative;width:60%;height:100%;padding:52px 0 52px 56px;display:flex;flex-direction:column;justify-content:space-between;z-index:2;}
+  .glow{position:absolute;top:200px;left:-60px;width:480px;height:480px;background:radial-gradient(circle,rgba(232,150,104,0.20),transparent 62%);pointer-events:none;}
+  .grain{position:absolute;inset:0;opacity:0.07;mix-blend-mode:overlay;pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+  .top-l{position:relative;z-index:2;font-family:var(--mono);font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--w60);}
+  .top-l b{color:var(--white);font-weight:500;}
+  .mid{position:relative;z-index:2;}
+  .eyebrow{font-family:var(--mono);font-size:15px;letter-spacing:0.3em;text-transform:uppercase;color:var(--peach);margin-bottom:20px;}
+  h1{font-size:96px;font-weight:500;line-height:0.87;letter-spacing:-0.05em;text-transform:uppercase;}
   h1 .r2{display:block;}
   h1 .dot{color:var(--peach);}
-  .sub{margin-top:22px;font-size:26px;font-style:italic;color:rgba(255,255,255,0.88);position:relative;z-index:2;}
-  .brand{display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2;border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;margin-top:26px;}
-  .brand .name{font-size:30px;font-weight:500;letter-spacing:-0.03em;}
-  .brand .name em{font-style:italic;color:var(--tan);}
-  .brand .url{font-family:var(--mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;color:var(--w60);}
+  .sub{margin-top:24px;font-size:24px;font-style:italic;color:rgba(255,255,255,0.88);letter-spacing:-0.01em;}
+  .brand{position:relative;z-index:2;font-size:28px;font-weight:500;letter-spacing:-0.03em;}
+  .brand em{font-style:italic;color:var(--tan);}
+  .brand .role{font-family:var(--mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--w60);margin-top:8px;font-weight:400;}
+
+  /* RIGHT — photo */
+  .right{position:absolute;top:0;right:0;width:46%;height:100%;overflow:hidden;}
+  .right img{width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block;}
+  .right::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(25,25,23,0) 28%);}
+  .tagpill{position:absolute;bottom:30px;right:30px;z-index:3;font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);
+    display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,0.35);border-radius:999px;padding:9px 16px;background:rgba(25,25,23,0.35);backdrop-filter:blur(4px);}
+  .tagpill .d{width:7px;height:7px;border-radius:50%;background:var(--peach);}
 </style>
 </head>
 <body>
-  <div class="photo">
-    <img src="images/laurence-one.jpg" alt="Laurence Uvin">
-    <div class="top"><span>Gratis gids</span><span class="pill">Claude Code</span></div>
-  </div>
-  <div class="panel">
+  <div class="left">
     <div class="glow"></div>
-    <div>
+    <div class="grain"></div>
+    <div class="top-l"><b>Gratis gids</b> · Claude Code · 2026</div>
+    <div class="mid">
       <div class="eyebrow">De AI Skills Gids</div>
       <h1>20 Claude<span class="r2">Skills<span class="dot">.</span></span></h1>
       <div class="sub">die ik deze zomer zou installeren</div>
     </div>
-    <div class="brand">
-      <div class="name">Laurence <em>Uvin</em></div>
-      <div class="url">laurenceuvin.com</div>
+    <div class="brand">Laurence <em>Uvin</em>
+      <div class="role">Founder · BORA · CEO Lifestyle™</div>
     </div>
+  </div>
+  <div class="right">
+    <img src="images/laurence-one.jpg" alt="Laurence Uvin">
+    <span class="tagpill"><span class="d"></span>laurenceuvin.com</span>
   </div>
 </body>
 </html>
