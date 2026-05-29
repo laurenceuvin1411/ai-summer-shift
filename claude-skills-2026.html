@@ -513,6 +513,12 @@ footer {
      =================================================================== */
   var PLUGANDPAY_OPTIN_ACTION = "";
 
+  /* VANGNET: elke inschrijving komt ook binnen op dit adres via FormSubmit
+     (geen account nodig). De allereerste inzending stuurt een activatie-mail
+     naar dit adres -- klik die EEN keer aan, daarna stromen alle leads
+     automatisch binnen. Laat leeg om uit te zetten. */
+  var FORMSUBMIT_EMAIL = "hello@laurenceuvin.com";
+
   var KEY  = "aiskills_unlocked";
   var body = document.body;
   var gate = document.getElementById('gate');
@@ -536,6 +542,23 @@ footer {
       var valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
       if (!valid) { gate.classList.add('show-err'); form.email.focus(); return; }
       gate.classList.remove('show-err');
+      var voornaam = (form.voornaam.value || '').trim();
+
+      /* Vangnet: lead naar je inbox via FormSubmit (blokkeert de unlock niet) */
+      if (FORMSUBMIT_EMAIL) {
+        try {
+          fetch("https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_EMAIL), {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+              voornaam: voornaam,
+              email: email,
+              _subject: "Nieuwe download: 20 Claude Skills gids",
+              _template: "table"
+            })
+          }).catch(function(){});
+        } catch (err) {}
+      }
 
       /* E-mail naar Plug&Pay sturen zonder de pagina te verlaten */
       if (PLUGANDPAY_OPTIN_ACTION) {
