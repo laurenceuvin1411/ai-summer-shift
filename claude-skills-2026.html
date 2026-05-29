@@ -366,8 +366,13 @@ footer {
     <div class="gate" id="gate">
       <p class="kicker"><span class="num">↓</span> Gratis gids</p>
       <h3>Wil je de <em>andere 17</em>?</h3>
-      <p class="gate-copy">Laat via de knop hieronder je voornaam en mailadres achter, en de volledige lijst van 20 skills staat meteen voor je klaar, mét de directe links om ze te installeren.</p>
-      <a href="https://laurenceuvin.plugandpay.nl/checkout/mn-20-favoriete-ai-skills" id="gate-btn" class="gate-cta">Ontgrendel de gids&nbsp;&nbsp;→</a>
+      <p class="gate-copy">Laat je voornaam en mailadres achter, en je krijgt de volledige lijst van 20 skills, mét de directe links om ze te installeren.</p>
+      <form id="gate-form" novalidate>
+        <input type="text" name="voornaam" placeholder="Je voornaam" autocomplete="given-name" aria-label="Voornaam">
+        <input type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required aria-label="E-mailadres">
+        <button type="submit">Ontgrendel de gids</button>
+      </form>
+      <div class="err">Vul even een geldig e-mailadres in.</div>
       <div class="micro">Gratis. Geen spam, enkel deze gids en af en toe iets dat de moeite is.</div>
     </div>
 
@@ -500,16 +505,23 @@ footer {
 <script>
 (function(){
   /* ===================================================================
-     LEAD GATE — Plug&Pay opt-in
-     De knop stuurt naar de Plug&Pay-checkout, waar naam + e-mail in je
-     lijst belanden. Zet in Plug&Pay de "bedankt / redirect na inschrijving"
-     URL op:
-       https://laurenceuvin1411.github.io/ai-summer-shift/claude-skills-2026.html?unlocked=1
-     Wanneer iemand terugkomt met ?unlocked=1 ontgrendelt de gids, en blijft
-     'ie ontgrendeld bij volgende bezoeken.
+     LEAD GATE — dubbele capture
+     1) Bij verzenden gaat het adres EERST naar je inbox via FormSubmit
+        (vangnet: je mist nooit een lead, ook al haakt iemand af op Plug&Pay).
+        LET OP: de allereerste inzending stuurt een activatie-mail naar
+        FORMSUBMIT_EMAIL -- klik die EEN keer aan, daarna stromen ze binnen.
+     2) Daarna sturen we ze door naar de Plug&Pay-opt-in, zodat het adres
+        ook in je Plug&Pay-lijst belandt.
+     3) Zet in Plug&Pay de redirect na inschrijving op:
+        https://laurenceuvin1411.github.io/ai-summer-shift/claude-skills-2026.html?unlocked=1
      =================================================================== */
+  var FORMSUBMIT_EMAIL = "hello@laurenceuvin.com";
+  var PLUGANDPAY_URL   = "https://laurenceuvin.plugandpay.nl/checkout/mn-20-favoriete-ai-skills";
+
   var KEY  = "aiskills_unlocked";
   var body = document.body;
+  var gate = document.getElementById('gate');
+  var form = document.getElementById('gate-form');
 
   function unlock(scrollToContent){
     body.classList.add('unlocked');
@@ -519,12 +531,41 @@ footer {
     }
   }
 
+  /* Terugkeer van Plug&Pay (?unlocked=1) of eerder al ingeschreven */
   var cameFromOptin = new URLSearchParams(location.search).get('unlocked') === '1';
-  if (cameFromOptin) {
-    localStorage.setItem(KEY, 'yes');
-    unlock(true);
-  } else if (localStorage.getItem(KEY) === 'yes') {
-    unlock(false);
+  if (cameFromOptin) { localStorage.setItem(KEY, 'yes'); unlock(true); }
+  else if (localStorage.getItem(KEY) === 'yes') { unlock(false); }
+
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var email    = (form.email.value || '').trim();
+      var voornaam = (form.voornaam.value || '').trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        gate.classList.add('show-err'); form.email.focus(); return;
+      }
+      gate.classList.remove('show-err');
+
+      /* 1) Inbox-kopie via FormSubmit. keepalive = verzendt ook tijdens de redirect. */
+      try {
+        fetch("https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_EMAIL), {
+          method: "POST",
+          keepalive: true,
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({
+            voornaam: voornaam,
+            email: email,
+            _subject: "Nieuwe lead: AI Skills Gids",
+            _template: "table"
+          })
+        }).catch(function(){});
+      } catch (err) {}
+
+      /* 2) Door naar de Plug&Pay-opt-in (belandt ook in je Plug&Pay-lijst) */
+      var sep  = PLUGANDPAY_URL.indexOf('?') === -1 ? '?' : '&';
+      var dest = PLUGANDPAY_URL + sep + "email=" + encodeURIComponent(email) + "&voornaam=" + encodeURIComponent(voornaam);
+      setTimeout(function(){ window.location.href = dest; }, 250);
+    });
   }
 })();
 </script>
