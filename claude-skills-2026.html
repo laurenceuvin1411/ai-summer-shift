@@ -276,6 +276,36 @@ footer {
 .footer-links a:hover { color: var(--warm-tan); }
 .footer-meta { max-width: var(--maxw); margin: 30px auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--white-40); font-size: 10px; }
 
+/* DOWNLOAD BAR (in unlocked content) */
+.dlbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;
+  margin: 0 0 50px; padding: 26px 30px; border:1px solid var(--white-20); border-radius:6px;
+  background: linear-gradient(180deg, var(--th-black-soft), var(--th-black)); }
+.dlbar .dl-txt { font-size:15px; color:var(--white-80); }
+.dlbar .dl-txt b { color:var(--th-white); font-weight:500; }
+.dlbar .dl-btn { display:inline-flex; align-items:center; gap:10px; background:var(--th-white); color:var(--th-black);
+  border:1px solid var(--th-white); border-radius:999px; padding:16px 28px; font-size:13px; font-weight:500;
+  letter-spacing:0.04em; transition:all .3s; white-space:nowrap; }
+.dlbar .dl-btn:hover { background:var(--peach); border-color:var(--peach); }
+
+/* PRINT — clean light PDF (for the downloadable guide) */
+@media print {
+  .topbar, .gate, .cta-card, footer, .dlbar, .art-meta { display:none !important; }
+  body { background:#ffffff !important; color:#1a1a1a !important; }
+  #gated { display:block !important; }
+  section { padding:0 !important; }
+  .art-hero { padding-top:0 !important; border:none !important; }
+  .art-hero h1, h2, h3, .skills-head h2 { color:#191917 !important; }
+  .art-hero h1 em, h3 em, .skill-src, a { color:#b5663f !important; }
+  .art-sub, .art-body p, .skill-body p, .deck { color:#333 !important; }
+  .skill-by { color:#777 !important; }
+  .kicker, .kicker .num { color:#777 !important; }
+  .kicker::before { background:#bbb !important; }
+  .install { background:#f5f1ea !important; border-color:#e3dccb !important; }
+  .install li { color:#333 !important; }
+  .skill { border-color:#e0ddd5 !important; page-break-inside:avoid; }
+  .skills-head { page-break-after:avoid; }
+}
+
 /* reveal */
 .reveal { opacity: 0; transform: translateY(18px); animation: rev 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards; }
 @keyframes rev { to { opacity: 1; transform: translateY(0); } }
@@ -377,6 +407,11 @@ footer {
     </div>
 
     <div id="gated">
+
+    <div class="dlbar">
+      <span class="dl-txt"><b>Je hebt toegang.</b> Lees hieronder verder, of neem de hele gids mee.</span>
+      <a href="ai-skills-gids.pdf" download class="dl-btn">↓&nbsp;&nbsp;Download de gids (PDF)</a>
+    </div>
 
     <article class="skill"><div class="skill-num">04</div><div class="skill-body">
       <h3>Remotion Video <span class="skill-by">by Remotion Dev</span></h3>
@@ -505,18 +540,14 @@ footer {
 <script>
 (function(){
   /* ===================================================================
-     LEAD GATE — dubbele capture
-     1) Bij verzenden gaat het adres EERST naar je inbox via FormSubmit
-        (vangnet: je mist nooit een lead, ook al haakt iemand af op Plug&Pay).
-        LET OP: de allereerste inzending stuurt een activatie-mail naar
-        FORMSUBMIT_EMAIL -- klik die EEN keer aan, daarna stromen ze binnen.
-     2) Daarna sturen we ze door naar de Plug&Pay-opt-in, zodat het adres
-        ook in je Plug&Pay-lijst belandt.
-     3) Zet in Plug&Pay de redirect na inschrijving op:
-        https://laurenceuvin1411.github.io/ai-summer-shift/claude-skills-2026.html?unlocked=1
+     LEAD GATE — instant unlock + download
+     Bij verzenden gaat het adres naar je inbox via FormSubmit, en de gids
+     ontgrendelt METEEN op de pagina (geen Plug&Pay-omweg).
+     LET OP: de allereerste inzending stuurt een activatie-mail naar
+     FORMSUBMIT_EMAIL -- klik die EEN keer aan, daarna stromen alle leads
+     automatisch binnen.
      =================================================================== */
   var FORMSUBMIT_EMAIL = "hello@laurenceuvin.com";
-  var PLUGANDPAY_URL   = "https://laurenceuvin.plugandpay.nl/checkout/mn-20-favoriete-ai-skills";
 
   var KEY  = "aiskills_unlocked";
   var body = document.body;
@@ -531,10 +562,8 @@ footer {
     }
   }
 
-  /* Terugkeer van Plug&Pay (?unlocked=1) of eerder al ingeschreven */
-  var cameFromOptin = new URLSearchParams(location.search).get('unlocked') === '1';
-  if (cameFromOptin) { localStorage.setItem(KEY, 'yes'); unlock(true); }
-  else if (localStorage.getItem(KEY) === 'yes') { unlock(false); }
+  /* Terugkerende bezoekers blijven ontgrendeld */
+  if (localStorage.getItem(KEY) === 'yes') unlock(false);
 
   if (form) {
     form.addEventListener('submit', function(e){
@@ -546,7 +575,7 @@ footer {
       }
       gate.classList.remove('show-err');
 
-      /* 1) Inbox-kopie via FormSubmit. keepalive = verzendt ook tijdens de redirect. */
+      /* Lead naar je inbox via FormSubmit (blokkeert de unlock niet) */
       try {
         fetch("https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_EMAIL), {
           method: "POST",
@@ -561,10 +590,9 @@ footer {
         }).catch(function(){});
       } catch (err) {}
 
-      /* 2) Door naar de Plug&Pay-opt-in (belandt ook in je Plug&Pay-lijst) */
-      var sep  = PLUGANDPAY_URL.indexOf('?') === -1 ? '?' : '&';
-      var dest = PLUGANDPAY_URL + sep + "email=" + encodeURIComponent(email) + "&voornaam=" + encodeURIComponent(voornaam);
-      setTimeout(function(){ window.location.href = dest; }, 250);
+      /* Meteen ontgrendelen */
+      localStorage.setItem(KEY, 'yes');
+      unlock(true);
     });
   }
 })();
