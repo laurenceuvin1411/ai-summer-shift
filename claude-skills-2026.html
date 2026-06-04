@@ -4,345 +4,172 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>20 Claude skills die ik zou installeren in 2026 — Laurence Uvin</title>
-<meta name="description" content="Geen code, geen plug-ins waar je in verdrinkt. De twintig Claude skills die ik zelf zou installeren als ik vandaag opnieuw begon te bouwen." />
+<meta name="description" content="Geen code, geen plug-ins. De twintig Claude skills die ik zelf zou installeren als ik vandaag opnieuw begon." />
 
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900,301,401,501,701&display=swap" rel="stylesheet">
+<!-- AFBEELDINGEN in /images/: bora-2.jpg · laurence-one.jpg · group-three.jpg · bora.png · laurence-two.jpg · group-one.jpg · feet.jpg -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Moontime&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --th-black:      #191917;
-  --th-black-deep: #0e0e0c;
-  --th-black-soft: #232220;
-  --th-white:      #ffffff;
-  --th-grey-light: #f3f3f3;
+:root{--cream:#f3ede0;--cream-2:#faf6ea;--paper:#fff;--ink:#1c1816;--ink-soft:#4a4540;--muted:#8a8275;--whisper:#b5ad9d;--rule:#d6cdb8;--rule-soft:#e6dfcc;--accent:#b07b5c;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',-apple-system,sans-serif;--script:'Moontime',cursive;--gutter:clamp(22px,5vw,80px);--maxw:1320px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--cream);}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--ink);color:var(--cream);}
 
-  --white-90: rgba(255,255,255,0.92);
-  --white-80: rgba(255,255,255,0.82);
-  --white-60: rgba(255,255,255,0.60);
-  --white-40: rgba(255,255,255,0.40);
-  --white-20: rgba(255,255,255,0.18);
-  --white-10: rgba(255,255,255,0.08);
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px var(--gutter);background:rgba(243,237,224,0.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;}
+.tb-left,.tb-right{display:flex;gap:32px;align-items:center;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-soft);}
+.tb-right{justify-self:end;}
+.tb-left a:hover,.tb-right a:hover{color:var(--ink);}
+.tb-left a.current,.tb-right a.current{color:var(--accent);}
+.tb-center{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink);}
+.tb-center em{font-style:italic;font-weight:400;letter-spacing:0;color:var(--ink-soft);margin-left:6px;}
+@media(max-width:900px){.topbar{padding:18px 22px;}.topbar-inner{grid-template-columns:1fr auto auto;gap:14px;}.tb-left a:not(:first-child),.tb-right a:not(:last-child){display:none;}.tb-center{font-size:18px;letter-spacing:0.24em;}}
 
-  --warm-tan:  #c4a684;
-  --peach:     #e89668;
+section{padding:0 var(--gutter);position:relative;}
+.wrap{max-width:var(--maxw);margin:0 auto;} .wrap-narrow{max-width:880px;margin:0 auto;}
+.eyebrow{font-size:11px;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);display:inline-block;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-0.01em;line-height:1.08;}
+.display{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.8vw,78px);line-height:1.06;letter-spacing:-0.015em;}
+.display em{font-style:italic;}
+h2{font-size:clamp(32px,4.6vw,60px);line-height:1.1;} h2 em{font-style:italic;}
+h3{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);line-height:1.2;font-weight:500;} h3 em{font-style:italic;font-weight:400;}
+p{color:var(--ink-soft);margin-bottom:1em;}
+.script{font-family:var(--script);font-weight:400;font-size:clamp(80px,13vw,200px);line-height:1.0;color:var(--ink);}
 
-  --sans:  'Satoshi', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  --mono:  'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:18px 38px;border:1px solid var(--ink);transition:all 0.5s cubic-bezier(0.2,0.7,0.2,1);cursor:pointer;}
+.btn:hover{background:transparent;color:var(--ink);}
+.btn-ghost{background:transparent;color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--cream);}
 
-  --gutter: clamp(22px, 4vw, 56px);
-  --maxw:   1480px;
-}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s cubic-bezier(0.2,0.7,0.2,1),transform 1s cubic-bezier(0.2,0.7,0.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.fade-up{opacity:0;animation:fadeUp 1.4s cubic-bezier(0.2,0.7,0.2,1) forwards;}
+.fade-up.d1{animation-delay:0.15s;} .fade-up.d2{animation-delay:0.3s;} .fade-up.d3{animation-delay:0.45s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@media(prefers-reduced-motion:reduce){.reveal,.fade-up{opacity:1!important;transform:none!important;animation:none!important;}}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; background: var(--th-black); }
-body {
-  background: var(--th-black);
-  color: var(--th-white);
-  font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
-::selection { background: var(--warm-tan); color: var(--th-black); }
-
-/* TOP BAR */
-.topbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 24px var(--gutter);
-  background: linear-gradient(180deg, rgba(25,25,23,0.82) 0%, rgba(25,25,23,0.4) 70%, transparent 100%);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-}
-.topbar-inner {
-  max-width: var(--maxw); margin: 0 auto;
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 30px;
-}
-.topbar-left { font-size: 14px; font-weight: 500; }
-.topbar-left .sub {
-  display: block; font-family: var(--mono); font-size: 10px;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--white-60); margin-top: 4px;
-}
-.topbar-center { font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; font-weight: 500; }
-.topbar-right { justify-self: end; display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
-.topbar-right a { transition: color 0.2s; }
-.topbar-right a:hover { color: var(--white-60); }
-@media (max-width: 900px) {
-  .topbar { padding: 18px 22px; }
-  .topbar-inner { grid-template-columns: 1fr auto; gap: 16px; }
-  .topbar-left .sub { display: none; }
-  .topbar-right { display: none; }
-}
-
-section { padding: 0 var(--gutter); position: relative; }
-.wrap-narrow { max-width: 820px; margin: 0 auto; }
-
-.kicker {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--white-60);
-  display: inline-flex; align-items: center; gap: 14px;
-}
-.kicker::before { content: ""; width: 32px; height: 1px; background: var(--peach); }
-.kicker .num { color: var(--peach); font-weight: 500; }
-
-/* ARTICLE HERO */
-.art-hero {
-  padding-top: 180px; padding-bottom: 90px;
-  border-bottom: 1px solid var(--white-10);
-}
-.art-meta {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--white-60);
-  display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 44px;
-}
-.art-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--white-40); }
-.art-hero h1 {
-  font-size: clamp(40px, 7vw, 96px);
-  font-weight: 500; letter-spacing: -0.045em; line-height: 0.98;
-  text-transform: uppercase; margin-bottom: 36px;
-}
-.art-hero h1 em { font-style: italic; color: var(--peach); font-weight: 500; }
-.art-sub {
-  font-size: clamp(19px, 2vw, 24px); line-height: 1.45; color: var(--white-80);
-  max-width: 52ch; font-weight: 400; letter-spacing: -0.01em;
-}
-.art-sub em { font-style: italic; }
+/* ART HERO */
+.art-hero{padding-top:160px;padding-bottom:80px;border-bottom:1px solid var(--rule);}
+.art-meta{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--muted);display:flex;gap:18px;align-items:center;margin-bottom:48px;flex-wrap:wrap;}
+.art-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--accent);}
+.art-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,86px);line-height:1.08;letter-spacing:-0.015em;margin-bottom:30px;}
+.art-hero h1 em{font-style:italic;color:var(--accent);}
+.art-sub{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,26px);line-height:1.45;color:var(--ink-soft);max-width:54ch;}
 
 /* BODY */
-.art-body { padding-top: 90px; padding-bottom: 60px; }
-.art-body p { font-size: 18px; line-height: 1.7; color: var(--white-80); margin-bottom: 1.5em; }
-.art-body p .lead-first { }
-.art-body p:first-of-type::first-letter {
-  font-size: 4.6em; float: left; line-height: 0.8; padding: 6px 14px 0 0;
-  color: var(--peach); font-weight: 500; font-style: italic;
-}
-.art-body strong { color: var(--th-white); font-weight: 500; }
-.art-body em { font-style: italic; }
+.art-body{padding-top:80px;padding-bottom:60px;}
+.art-body p{font-size:17px;line-height:1.85;color:var(--ink-soft);margin-bottom:1.5em;max-width:64ch;}
+.art-body p:first-of-type::first-letter{font-family:var(--serif);font-style:italic;font-weight:400;font-size:5em;float:left;line-height:0.85;padding:8px 14px 0 0;color:var(--accent);}
+.art-body strong{color:var(--ink);font-weight:500;}
+.art-body em{font-style:italic;color:var(--accent);}
 
-/* INSTALL BOX */
-.install {
-  margin: 50px 0 20px; padding: 40px;
-  border: 1px solid var(--white-10); border-radius: 4px;
-  background: var(--th-black-soft);
-}
-.install .kicker { margin-bottom: 24px; }
-.install ol { list-style: none; counter-reset: step; }
-.install li {
-  counter-increment: step; position: relative; padding: 14px 0 14px 50px;
-  border-bottom: 1px solid var(--white-10); font-size: 16px; line-height: 1.5; color: var(--white-80);
-}
-.install li:last-child { border-bottom: none; }
-.install li::before {
-  content: counter(step, decimal-leading-zero); position: absolute; left: 0; top: 14px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--peach); font-weight: 500;
-}
+.install{margin:60px 0 30px;padding:44px;border:1px solid var(--rule);background:var(--cream-2);}
+.install .label{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:inline-block;}
+.install ol{list-style:none;counter-reset:step;}
+.install li{counter-increment:step;position:relative;padding:16px 0 16px 50px;border-bottom:1px solid var(--rule);font-family:var(--serif);font-size:18px;color:var(--ink);line-height:1.5;}
+.install li:last-child{border-bottom:none;}
+.install li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:18px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--accent);}
 
-/* SKILLS LIST */
-.skills { padding-top: 40px; padding-bottom: 100px; }
-.skills-head { margin-bottom: 30px; }
-.skills-head h2 {
-  font-size: clamp(28px, 4vw, 52px); font-weight: 500; letter-spacing: -0.035em;
-  text-transform: uppercase; line-height: 1; margin-top: 24px;
-}
-.skill {
-  display: grid; grid-template-columns: 80px 1fr; gap: 28px;
-  padding: 40px 0; border-bottom: 1px solid var(--white-10); align-items: start;
-}
-.skill:first-of-type { border-top: 1px solid var(--white-10); }
-.skill-num {
-  font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em;
-  color: var(--peach); font-weight: 500; padding-top: 8px;
-}
-.skill-body h3 {
-  font-size: clamp(22px, 2.6vw, 30px); font-weight: 500; letter-spacing: -0.025em;
-  margin-bottom: 12px; line-height: 1.1;
-}
-.skill-by {
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em;
-  color: var(--white-40); text-transform: none; font-weight: 400;
-  display: block; margin-top: 8px;
-}
-.skill-body p { font-size: 16.5px; line-height: 1.65; color: var(--white-80); margin: 0; }
-.skill-body p em { font-style: italic; color: var(--white-90); }
-.skill-src {
-  display: inline-flex; align-items: center; gap: 8px; margin-top: 16px;
-  font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em;
-  color: var(--white-60); transition: color 0.2s; word-break: break-all;
-}
-.skill-src::before { content: "↗"; font-size: 12px; color: var(--peach); }
-.skill-src:hover { color: var(--peach); }
-.skill-src.none { color: var(--white-40); }
-.skill-src.none::before { content: "—"; color: var(--white-40); }
-@media (max-width: 700px) {
-  .skill { grid-template-columns: 1fr; gap: 10px; padding: 32px 0; }
-  .skill-num { padding-top: 0; }
-}
+/* SKILLS */
+.skills{padding-top:60px;padding-bottom:120px;}
+.skills-head{margin-bottom:30px;}
+.skills-head h2{font-family:var(--serif);font-size:clamp(32px,4.4vw,56px);font-weight:400;line-height:1.1;margin-top:18px;letter-spacing:-0.01em;}
+.skills-head h2 em{font-style:italic;color:var(--accent);}
 
-/* LEAD GATE */
-.gate {
-  max-width: 820px; margin: 50px auto 0; padding: clamp(34px, 5vw, 60px);
-  border: 1px solid var(--white-20); border-radius: 6px;
-  background: linear-gradient(180deg, var(--th-black-soft), var(--th-black));
-  text-align: center; position: relative;
-}
-.gate .kicker { justify-content: center; margin-bottom: 22px; }
-.gate h3 {
-  font-size: clamp(26px, 3.6vw, 44px); font-weight: 500; letter-spacing: -0.035em;
-  text-transform: uppercase; line-height: 1; margin-bottom: 16px;
-}
-.gate h3 em { font-style: italic; color: var(--peach); font-weight: 500; }
-.gate .gate-copy { color: var(--white-80); font-size: 16px; line-height: 1.6; max-width: 48ch; margin: 0 auto 30px; }
-.gate form { display: flex; gap: 12px; max-width: 520px; margin: 0 auto; flex-wrap: wrap; }
-.gate input[type=email], .gate input[type=text] {
-  flex: 1; min-width: 200px; background: var(--th-black); border: 1px solid var(--white-20);
-  color: var(--th-white); font-family: var(--sans); font-size: 15px;
-  padding: 18px 22px; border-radius: 999px; outline: none; transition: border-color 0.2s;
-}
-.gate input::placeholder { color: var(--white-40); }
-.gate input:focus { border-color: var(--white-60); }
-.gate button {
-  background: var(--th-white); color: var(--th-black); border: 1px solid var(--th-white);
-  font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
-  padding: 18px 30px; border-radius: 999px; cursor: pointer; transition: all 0.3s; white-space: nowrap;
-}
-.gate button:hover { background: var(--peach); border-color: var(--peach); }
-.gate .gate-cta { display:inline-flex; align-items:center; gap:8px; background:var(--th-white); color:var(--th-black); border:1px solid var(--th-white); font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.04em; padding:20px 36px; border-radius:999px; cursor:pointer; transition:all 0.3s; text-decoration:none; }
-.gate .gate-cta:hover { background:var(--peach); border-color:var(--peach); transform:translateY(-1px); }
-.gate .micro {
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--white-40); margin-top: 20px;
-}
-.gate .err { color: #e8967e; font-size: 13px; margin-top: 14px; display: none; }
-.gate.show-err .err { display: block; }
+.skill{display:grid;grid-template-columns:80px 1fr;gap:32px;padding:44px 0;border-bottom:1px solid var(--rule);align-items:start;}
+.skill:first-of-type{border-top:1px solid var(--rule);}
+.skill-num{font-family:var(--serif);font-size:36px;color:var(--ink);line-height:1;letter-spacing:-0.015em;padding-top:4px;}
+.skill-body h3{font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);font-weight:500;letter-spacing:-0.01em;margin-bottom:6px;}
+.skill-body h3 em{font-style:italic;font-weight:400;color:var(--accent);}
+.skill-by{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:14px;}
+.skill-body p{font-size:15.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 16px;max-width:62ch;}
+.skill-src{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.16em;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:3px;transition:all 0.3s;word-break:break-all;}
+.skill-src::before{content:"↗";color:var(--accent);}
+.skill-src:hover{color:var(--accent);border-bottom-color:var(--accent);}
+.skill-src.none{color:var(--muted);border-bottom-color:transparent;}
+@media(max-width:700px){.skill{grid-template-columns:1fr;gap:10px;padding:32px 0;}.skill-num{padding-top:0;}}
 
-/* gated content */
-#gated { display: none; }
-body.unlocked #gated { display: block; }
-body.unlocked .gate { display: none; }
+/* GATE */
+.gate{max-width:820px;margin:60px auto 20px;padding:clamp(34px,5vw,60px);border:1px solid var(--rule);background:var(--paper);text-align:center;}
+.gate .label{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:inline-block;}
+.gate h3{font-family:var(--serif);font-size:clamp(30px,4vw,52px);font-weight:400;line-height:1.1;letter-spacing:-0.015em;margin-bottom:20px;}
+.gate h3 em{font-style:italic;color:var(--accent);}
+.gate .gate-copy{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.55;color:var(--ink-soft);max-width:48ch;margin:0 auto 32px;}
+.gate form{display:flex;gap:12px;max-width:520px;margin:0 auto;flex-wrap:wrap;}
+.gate input[type=email],.gate input[type=text]{flex:1;min-width:200px;background:transparent;border:none;border-bottom:1px solid var(--rule);color:var(--ink);font-family:var(--serif);font-style:italic;font-size:18px;padding:14px 4px;outline:none;transition:border-color 0.2s;}
+.gate input::placeholder{color:var(--whisper);}
+.gate input:focus{border-bottom-color:var(--accent);}
+.gate button{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;background:var(--ink);color:var(--cream);padding:16px 30px;border:1px solid var(--ink);cursor:pointer;transition:all 0.4s;white-space:nowrap;}
+.gate button:hover{background:transparent;color:var(--ink);}
+.gate .micro{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-top:22px;}
+.gate .err{color:var(--accent);font-size:13px;font-style:italic;font-family:var(--serif);margin-top:14px;display:none;}
+.gate.show-err .err{display:block;}
+
+#gated{display:none;} body.unlocked #gated{display:block;} body.unlocked .gate{display:none;}
+
+/* DOWNLOAD BAR */
+.dlbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin:0 0 50px;padding:28px 32px;border:1px solid var(--rule);background:var(--cream-2);}
+.dlbar .dl-txt{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);}
+.dlbar .dl-txt b{color:var(--ink);font-style:normal;font-weight:500;font-family:var(--sans);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;margin-right:8px;}
+.dlbar .dl-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--ink);border:1px solid var(--ink);padding:14px 26px;font-size:11px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;font-family:var(--sans);transition:all 0.4s;white-space:nowrap;}
+.dlbar .dl-btn:hover{background:var(--ink);color:var(--cream);}
+
+/* PRINT */
+@media print{
+  .topbar,.gate,.cta-card,footer,.dlbar,.art-meta{display:none!important;}
+  body{background:#fff!important;color:#1a1a1a!important;}
+  #gated{display:block!important;}
+  section{padding:0!important;}
+  .art-hero{padding-top:0!important;border:none!important;}
+  .skill{border-color:#e0ddd5!important;page-break-inside:avoid;}
+  .skills-head{page-break-after:avoid;}
+}
 
 /* CTA CARD */
-.cta-card {
-  padding-bottom: 140px;
-}
-.cta-card .inner {
-  background: var(--th-grey-light); color: var(--th-black);
-  border-radius: 4px; padding: clamp(40px, 6vw, 80px); text-align: center; position: relative; overflow: hidden;
-}
-.cta-card .kicker { color: rgba(25,25,23,0.6); justify-content: center; }
-.cta-card .kicker::before { background: var(--th-black); }
-.cta-card .kicker .num { color: var(--th-black); }
-.cta-card h2 {
-  font-size: clamp(34px, 5.5vw, 72px); font-weight: 500; letter-spacing: -0.04em;
-  text-transform: uppercase; line-height: 0.96; margin: 28px auto 28px; max-width: 18ch;
-}
-.cta-card h2 em { font-style: italic; color: rgba(25,25,23,0.45); font-weight: 500; }
-.cta-card p {
-  font-size: 18px; line-height: 1.6; color: rgba(25,25,23,0.82); max-width: 52ch;
-  margin: 0 auto 40px;
-}
-.cta-card p em { font-style: italic; }
-.btn {
-  display: inline-flex; align-items: center; gap: 14px;
-  background: var(--th-black); color: var(--th-white);
-  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
-  padding: 22px 32px; border: 1px solid var(--th-black); border-radius: 999px;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer;
-}
-.btn:hover { background: transparent; color: var(--th-black); }
-.btn .arrow { width: 22px; height: 8px; transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1); }
-.btn:hover .arrow { transform: translateX(6px); }
+.cta-card{padding-bottom:140px;}
+.cta-card .inner{background:var(--ink);color:var(--cream);padding:clamp(50px,7vw,90px);text-align:center;position:relative;overflow:hidden;}
+.cta-card .label{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--whisper);margin-bottom:24px;display:inline-block;}
+.cta-card h2{color:var(--cream);font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,68px);line-height:1.08;letter-spacing:-0.015em;margin:0 auto 28px;max-width:18ch;}
+.cta-card h2 em{font-style:italic;color:#d4a684;}
+.cta-card p{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2vw,21px);line-height:1.55;color:rgba(243,237,224,0.85);max-width:54ch;margin:0 auto 40px;}
+.cta-card .btn{background:var(--cream);color:var(--ink);border-color:var(--cream);}
+.cta-card .btn:hover{background:#d4a684;border-color:#d4a684;color:var(--ink);}
 
-/* FOOTER */
-footer {
-  padding: 80px var(--gutter) 30px; background: var(--th-black-deep);
-  color: var(--white-60); font-family: var(--mono); font-size: 11px;
-  letter-spacing: 0.18em; text-transform: uppercase; border-top: 1px solid var(--white-10);
-}
-.footer-inner {
-  max-width: var(--maxw); margin: 0 auto; display: flex; justify-content: space-between;
-  align-items: baseline; flex-wrap: wrap; gap: 20px; padding-bottom: 40px; border-bottom: 1px solid var(--white-10);
-}
-.footer-logo {
-  font-family: var(--sans); font-style: italic; font-weight: 500; font-size: 28px;
-  color: var(--th-white); text-transform: none; letter-spacing: -0.02em;
-}
-.footer-links { display: flex; gap: 28px; }
-.footer-links a { color: var(--th-white); text-transform: none; letter-spacing: 0; font-family: var(--sans); font-size: 14px; }
-.footer-links a:hover { color: var(--warm-tan); }
-.footer-meta { max-width: var(--maxw); margin: 30px auto 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--white-40); font-size: 10px; }
-
-/* DOWNLOAD BAR (in unlocked content) */
-.dlbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:20px;
-  margin: 0 0 50px; padding: 26px 30px; border:1px solid var(--white-20); border-radius:6px;
-  background: linear-gradient(180deg, var(--th-black-soft), var(--th-black)); }
-.dlbar .dl-txt { font-size:15px; color:var(--white-80); }
-.dlbar .dl-txt b { color:var(--th-white); font-weight:500; }
-.dlbar .dl-btn { display:inline-flex; align-items:center; gap:10px; background:var(--th-white); color:var(--th-black);
-  border:1px solid var(--th-white); border-radius:999px; padding:16px 28px; font-size:13px; font-weight:500;
-  letter-spacing:0.04em; transition:all .3s; white-space:nowrap; }
-.dlbar .dl-btn:hover { background:var(--peach); border-color:var(--peach); }
-
-/* PRINT — clean light PDF (for the downloadable guide) */
-@media print {
-  .topbar, .gate, .cta-card, footer, .dlbar, .art-meta { display:none !important; }
-  body { background:#ffffff !important; color:#1a1a1a !important; }
-  #gated { display:block !important; }
-  section { padding:0 !important; }
-  .art-hero { padding-top:0 !important; border:none !important; }
-  .art-hero h1, h2, h3, .skills-head h2 { color:#191917 !important; }
-  .art-hero h1 em, h3 em, .skill-src, a { color:#b5663f !important; }
-  .art-sub, .art-body p, .skill-body p, .deck { color:#333 !important; }
-  .skill-by { color:#777 !important; }
-  .kicker, .kicker .num { color:#777 !important; }
-  .kicker::before { background:#bbb !important; }
-  .install { background:#f5f1ea !important; border-color:#e3dccb !important; }
-  .install li { color:#333 !important; }
-  .skill { border-color:#e0ddd5 !important; page-break-inside:avoid; }
-  .skills-head { page-break-after:avoid; }
-}
-
-/* reveal */
-.reveal { opacity: 0; transform: translateY(18px); animation: rev 0.9s cubic-bezier(0.2,0.7,0.2,1) forwards; }
-@keyframes rev { to { opacity: 1; transform: translateY(0); } }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; animation: none; } }
+footer{padding:80px var(--gutter) 36px;background:var(--cream);border-top:1px solid var(--rule);}
+.footer-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:60px;padding-bottom:60px;border-bottom:1px solid var(--rule);}
+.footer-brand .logo{font-family:var(--serif);font-size:32px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;}
+.footer-brand .logo em{font-style:italic;font-weight:400;letter-spacing:0;color:var(--ink-soft);margin-left:6px;}
+.footer-brand p{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.5;max-width:32ch;}
+.footer-col h5{font-size:10px;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;}
+.footer-col a{display:block;margin-bottom:10px;color:var(--ink);font-family:var(--serif);font-size:16px;transition:color 0.3s;}
+.footer-col a:hover{color:var(--accent);font-style:italic;}
+.footer-meta{max-width:var(--maxw);margin:30px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:40px;}}
 </style>
 </head>
-
 <body>
 
 <nav class="topbar">
   <div class="topbar-inner">
-    <div class="topbar-left">
-      Resources
-      <span class="sub">Laurence Uvin · 2026</span>
-    </div>
-    <a href="index.html" class="topbar-center">LAURENCE&nbsp;&nbsp;UVIN</a>
-    <div class="topbar-right">
-      <a href="ai-summer-shift.html">AI Summer Shift</a>
-      <a href="mailto:hello@laurenceuvin.com">Contact</a>
-    </div>
+    <div class="tb-left"><a href="coaching.html">Coaching</a><a href="websites.html">Websites</a><a href="ai-summer-shift.html">Summer Shift</a></div>
+    <a href="index.html" class="tb-center">LAURENCE<em>Uvin</em></a>
+    <div class="tb-right"><a href="podcast.html">Podcast</a><a href="claude-skills-2026.html" class="current">Gids</a><a href="mailto:hello@laurenceuvin.com">Contact</a></div>
   </div>
 </nav>
 
 <main>
 
-<!-- ARTICLE HERO -->
+<!-- HERO -->
 <section class="art-hero">
   <div class="wrap-narrow">
-    <div class="art-meta reveal">
-      <span>Resources / AI</span>
-      <span class="dot"></span>
-      <span>6 min lezen</span>
-      <span class="dot"></span>
-      <span>Mei 2026</span>
-    </div>
-    <h1 class="reveal">20 Claude skills die ik zou <em>installeren</em> in 2026</h1>
-    <p class="art-sub reveal">Geen code. Geen plug-ins waar je in verdrinkt. Wel een handvol kleine instructiebestanden die je AI plots specialist maken in precies dat ene ding.</p>
+    <div class="art-meta fade-up d1"><span>Resources</span><span class="dot"></span><span>AI · Tools</span><span class="dot"></span><span>6 min lezen</span><span class="dot"></span><span>Mei 2026</span></div>
+    <h1 class="fade-up d2">20 Claude skills die ik zou <em>installeren</em> in 2026</h1>
+    <p class="art-sub fade-up d3">Geen code. Geen plug-ins waar je in verdrinkt. Wel een handvol kleine instructiebestanden die je AI plots specialist maken in precies dat ene ding.</p>
   </div>
 </section>
 
@@ -350,13 +177,11 @@ footer {
 <section class="art-body">
   <div class="wrap-narrow">
     <p>'k Heb eigenlijk nooit echt met agencies gewerkt. Ik deed altijd alles zelf, m'n teksten, m'n beelden, m'n websites. Niet omdat 't moest, maar omdat ik 't graag in eigen handen hou. Het enige probleem? 't Duurde eindeloos. Eén pagina kon weken aanslepen.</p>
-
-    <p>En toen ontdekte ik die skills. Geen ingewikkeld gedoe, gewoon kleine setjes instructies waardoor m'n AI ineens snapte waar ik mee bezig was. Diezelfde dingen waar ik vroeger weken op zat te zwoegen, maak ik nu op nen namiddag. 't Gaat letterlijk 1000 keer vlotter.</p>
-
+    <p>En toen ontdekte ik die skills. Geen ingewikkeld gedoe, gewoon kleine setjes instructies waardoor m'n AI ineens snapte waar ik mee bezig was. Diezelfde dingen waar ik vroeger weken op zat te zwoegen, maak ik nu op nen namiddag. <em>'t Gaat letterlijk 1000 keer vlotter.</em></p>
     <p>'k Heb m'n twintig favorieten ne keer voor je op een rijtje gezet. Mét de links, zodat je zelf niet moet gaan zoeken.</p>
 
     <div class="install">
-      <p class="kicker"><span class="num">↓</span> Hoe je een skill installeert</p>
+      <span class="label">↓ Hoe je een skill installeert</span>
       <ol>
         <li>Je opent Claude Code, in je terminal of in de app.</li>
         <li>Je voegt de skill toe via de marketplace, of je plaatst het bestand in je skills-map.</li>
@@ -370,212 +195,128 @@ footer {
 <section class="skills">
   <div class="wrap-narrow">
     <div class="skills-head">
-      <p class="kicker"><span class="num">01—20</span> De lijst</p>
-      <h2>Twintig skills, <br>één per ding dat je wil maken</h2>
+      <span class="eyebrow">01–20 · De lijst</span>
+      <h2>Twintig skills,<br><em>één per ding</em> dat je wil maken.</h2>
     </div>
 
-    <article class="skill"><div class="skill-num">01</div><div class="skill-body">
-      <h3>Marketing Skills <span class="skill-by">by Corey Haines</span></h3>
-      <p>Installs 30+ free marketing agents that handle SEO audits, copywriting, email sequences, CRO, analytics, and growth engineering. Each skill reads your product context first so every output is tailored to your brand, audience, and positioning. Like hiring an entire marketing team that works inside Claude.</p>
-      <a class="skill-src" href="https://github.com/coreyhaines31/marketingskills" target="_blank" rel="noopener">github.com/coreyhaines31/marketingskills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">01</div><div class="skill-body"><h3>Marketing Skills</h3><span class="skill-by">by Corey Haines</span><p>Installs 30+ free marketing agents that handle SEO audits, copywriting, email sequences, CRO, analytics, and growth engineering. Each skill reads your product context first so every output is tailored to your brand, audience, and positioning. Like hiring an entire marketing team that works inside Claude.</p><a class="skill-src" href="https://github.com/coreyhaines31/marketingskills" target="_blank" rel="noopener">github.com/coreyhaines31/marketingskills</a></div></article>
 
-    <article class="skill"><div class="skill-num">02</div><div class="skill-body">
-      <h3>Stop-Slop <span class="skill-by">by Hardik Pandya</span></h3>
-      <p>Forces Claude to strip out every AI giveaway from your writing. Catches throat-clearing openers, emphasis crutches, filter phrases, structural cliches, binary contrasts, dramatic fragmentation, and the AI vocabulary words that scream "a robot wrote this." Your writing will actually sound like a real human.</p>
-      <a class="skill-src" href="https://github.com/hardikpandya/stop-slop" target="_blank" rel="noopener">github.com/hardikpandya/stop-slop</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">02</div><div class="skill-body"><h3>Stop-Slop</h3><span class="skill-by">by Hardik Pandya</span><p>Forces Claude to strip out every AI giveaway from your writing. Catches throat-clearing openers, emphasis crutches, filter phrases, structural cliches, binary contrasts, dramatic fragmentation, and the AI vocabulary words that scream "a robot wrote this." Your writing will actually sound like a real human.</p><a class="skill-src" href="https://github.com/hardikpandya/stop-slop" target="_blank" rel="noopener">github.com/hardikpandya/stop-slop</a></div></article>
 
-    <article class="skill"><div class="skill-num">03</div><div class="skill-body">
-      <h3>UI/UX Pro Max <span class="skill-by">by Next Level Builder</span></h3>
-      <p>Gives Claude a built-in database of 50+ UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 10 frameworks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS). Say "fintech dashboard" and it picks the style, colors, and typography automatically.</p>
-      <a class="skill-src" href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">github.com/nextlevelbuilder/ui-ux-pro-max-skill</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">03</div><div class="skill-body"><h3>UI/UX Pro Max</h3><span class="skill-by">by Next Level Builder</span><p>Gives Claude a built-in database of 50+ UI styles, 161 color palettes, 57 font pairings, 99 UX guidelines, and 25 chart types across 10 frameworks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind, shadcn/ui, HTML/CSS). Say "fintech dashboard" and it picks the style, colors, and typography automatically.</p><a class="skill-src" href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener">github.com/nextlevelbuilder/ui-ux-pro-max-skill</a></div></article>
 
-    <!-- LEAD GATE -->
+    <!-- GATE -->
     <div class="gate" id="gate">
-      <p class="kicker"><span class="num">↓</span> Gratis gids</p>
+      <span class="label">↓ Gratis gids</span>
       <h3>Wil je de <em>andere 17</em>?</h3>
       <p class="gate-copy">Laat je voornaam en mailadres achter, en je krijgt de volledige lijst van 20 skills, mét de directe links om ze te installeren.</p>
       <form id="gate-form" novalidate>
-        <input type="text" name="voornaam" placeholder="Je voornaam" autocomplete="given-name" aria-label="Voornaam">
-        <input type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required aria-label="E-mailadres">
-        <button type="submit">Ontgrendel de gids</button>
+        <input type="text" name="voornaam" placeholder="Je voornaam" autocomplete="given-name">
+        <input type="email" name="email" placeholder="Je e-mailadres" autocomplete="email" required>
+        <button type="submit">Ontgrendel</button>
       </form>
       <div class="err">Vul even een geldig e-mailadres in.</div>
-      <div class="micro">Gratis. Geen spam, enkel deze gids en af en toe iets dat de moeite is.</div>
+      <div class="micro">Gratis · Geen spam · Uitschrijven kan altijd</div>
     </div>
 
     <div id="gated">
 
     <div class="dlbar">
-      <span class="dl-txt"><b>Je hebt toegang.</b> Lees hieronder verder, of neem de hele gids mee.</span>
+      <span class="dl-txt"><b>Je hebt toegang.</b>Lees hieronder verder, of neem de hele gids mee.</span>
       <a href="ai-skills-gids.pdf" download class="dl-btn">↓&nbsp;&nbsp;Download de gids (PDF)</a>
     </div>
 
-    <article class="skill"><div class="skill-num">04</div><div class="skill-body">
-      <h3>Remotion Video <span class="skill-by">by Remotion Dev</span></h3>
-      <p>Lets Claude open its own video editor and build fully animated, production-ready videos from a single text prompt. Uses React under the hood, with 29 domain-specific rules covering 3D, animations, audio, captions, charts, and transitions. The official skill from the Remotion team.</p>
-      <a class="skill-src" href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">github.com/remotion-dev/skills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">04</div><div class="skill-body"><h3>Remotion Video</h3><span class="skill-by">by Remotion Dev</span><p>Lets Claude open its own video editor and build fully animated, production-ready videos from a single text prompt. Uses React under the hood, with 29 domain-specific rules covering 3D, animations, audio, captions, charts, and transitions. The official skill from the Remotion team.</p><a class="skill-src" href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">github.com/remotion-dev/skills</a></div></article>
 
-    <article class="skill"><div class="skill-num">05</div><div class="skill-body">
-      <h3>Context Engineering Kit <span class="skill-by">by NeoLab HQ</span></h3>
-      <p>Reduces the amount of tokens Claude uses per response so you stop hitting usage limits. Teaches Claude efficient response patterns with minimal token footprint while maintaining full quality. Compatible with Claude Code, OpenCode, Cursor, Gemini CLI, and more.</p>
-      <a class="skill-src" href="https://github.com/NeoLabHQ/context-engineering-kit" target="_blank" rel="noopener">github.com/NeoLabHQ/context-engineering-kit</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">05</div><div class="skill-body"><h3>Context Engineering Kit</h3><span class="skill-by">by NeoLab HQ</span><p>Reduces the amount of tokens Claude uses per response so you stop hitting usage limits. Teaches Claude efficient response patterns with minimal token footprint while maintaining full quality. Compatible with Claude Code, OpenCode, Cursor, Gemini CLI, and more.</p><a class="skill-src" href="https://github.com/NeoLabHQ/context-engineering-kit" target="_blank" rel="noopener">github.com/NeoLabHQ/context-engineering-kit</a></div></article>
 
-    <article class="skill"><div class="skill-num">06</div><div class="skill-body">
-      <h3>Arcads <span class="skill-by">by Kruse Media LLC</span></h3>
-      <p>Create AI marketing videos and images using your Arcads account, powered by AI agents in Claude Code. Supports Sora 2, Veo 3.1, Kling 3.0, and Nano Banana for video generation, and includes skills for UGC video ads, YouTube thumbnails, and AI influencer content.</p>
-      <a class="skill-src" href="https://github.com/krusemediallc/arcads-claude-code" target="_blank" rel="noopener">github.com/krusemediallc/arcads-claude-code</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">06</div><div class="skill-body"><h3>Arcads</h3><span class="skill-by">by Kruse Media LLC</span><p>Create AI marketing videos and images using your Arcads account, powered by AI agents in Claude Code. Supports Sora 2, Veo 3.1, Kling 3.0, and Nano Banana for video generation, and includes skills for UGC video ads, YouTube thumbnails, and AI influencer content.</p><a class="skill-src" href="https://github.com/krusemediallc/arcads-claude-code" target="_blank" rel="noopener">github.com/krusemediallc/arcads-claude-code</a></div></article>
 
-    <article class="skill"><div class="skill-num">07</div><div class="skill-body">
-      <h3>Superpowers <span class="skill-by">by Jesse Vincent</span></h3>
-      <p>The biggest community-built skill library in the Claude ecosystem with 40,000+ GitHub stars. A composable framework that structures the full software development lifecycle: brainstorming, git worktree setup, implementation planning, subagent execution, TDD, and code review before merging.</p>
-      <a class="skill-src" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">07</div><div class="skill-body"><h3>Superpowers</h3><span class="skill-by">by Jesse Vincent</span><p>The biggest community-built skill library in the Claude ecosystem with 40,000+ GitHub stars. A composable framework that structures the full software development lifecycle: brainstorming, git worktree setup, implementation planning, subagent execution, TDD, and code review before merging.</p><a class="skill-src" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">github.com/obra/superpowers</a></div></article>
 
-    <article class="skill"><div class="skill-num">08</div><div class="skill-body">
-      <h3>Picsart GenAI CLI <span class="skill-by">by Picsart</span></h3>
-      <p>Gives Claude access to 140+ AI models for generating images (Flux, Recraft, Nano Banana), videos (Sora, Kling, Veo, Runway), and audio (ElevenLabs). Pay-per-use credits, no subscription. Turn Claude into a full creative studio for images, video, audio, and editing.</p>
-      <a class="skill-src" href="https://picsart.com/gen-ai-cli/" target="_blank" rel="noopener">picsart.com/gen-ai-cli</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">08</div><div class="skill-body"><h3>Picsart GenAI CLI</h3><span class="skill-by">by Picsart</span><p>Gives Claude access to 140+ AI models for generating images (Flux, Recraft, Nano Banana), videos (Sora, Kling, Veo, Runway), and audio (ElevenLabs). Pay-per-use credits, no subscription. Turn Claude into a full creative studio for images, video, audio, and editing.</p><a class="skill-src" href="https://picsart.com/gen-ai-cli/" target="_blank" rel="noopener">picsart.com/gen-ai-cli</a></div></article>
 
-    <article class="skill"><div class="skill-num">09</div><div class="skill-body">
-      <h3>AI Sales Team <span class="skill-by">by Zubair Trabzada</span></h3>
-      <p>An AI-powered sales team for Claude Code with 14 skills and 5 parallel agents. Researches prospects, qualifies leads using BANT and MEDDIC frameworks, finds decision makers, generates personalized outreach, prepares meetings, writes proposals, and produces PDF pipeline reports.</p>
-      <a class="skill-src" href="https://github.com/zubair-trabzada/ai-sales-team-claude" target="_blank" rel="noopener">github.com/zubair-trabzada/ai-sales-team-claude</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">09</div><div class="skill-body"><h3>AI Sales Team</h3><span class="skill-by">by Zubair Trabzada</span><p>An AI-powered sales team for Claude Code with 14 skills and 5 parallel agents. Researches prospects, qualifies leads using BANT and MEDDIC frameworks, finds decision makers, generates personalized outreach, prepares meetings, writes proposals, and produces PDF pipeline reports.</p><a class="skill-src" href="https://github.com/zubair-trabzada/ai-sales-team-claude" target="_blank" rel="noopener">github.com/zubair-trabzada/ai-sales-team-claude</a></div></article>
 
-    <article class="skill"><div class="skill-num">10</div><div class="skill-body">
-      <h3>Obsidian Second Brain <span class="skill-by">by Eugeniu Ghelbur</span></h3>
-      <p>Turns your Obsidian vault into a living, AI-powered second brain with 31 commands across 4 layers. Claude operates your vault without you opening Obsidian, pulls live web research into your notes, runs scheduled agents that update your vault while you sleep, and synthesizes knowledge across years of notes.</p>
-      <span class="skill-src none">Zoek op "Obsidian Second Brain skill"</span>
-    </div></article>
+    <article class="skill"><div class="skill-num">10</div><div class="skill-body"><h3>Obsidian Second Brain</h3><span class="skill-by">by Eugeniu Ghelbur</span><p>Turns your Obsidian vault into a living, AI-powered second brain with 31 commands across 4 layers. Claude operates your vault without you opening Obsidian, pulls live web research into your notes, runs scheduled agents that update your vault while you sleep, and synthesizes knowledge across years of notes.</p><span class="skill-src none">Zoek op "Obsidian Second Brain skill"</span></div></article>
 
-    <article class="skill"><div class="skill-num">11</div><div class="skill-body">
-      <h3>Trail of Bits Security <span class="skill-by">by Trail of Bits</span></h3>
-      <p>Professional security expertise from one of the most respected security firms in the world. Static analysis, variant analysis, and vulnerability detection on your codebase. Built by real security researchers, not generic AI rules. Covers web, API, smart contract, and infrastructure security.</p>
-      <a class="skill-src" href="https://github.com/trailofbits/skills" target="_blank" rel="noopener">github.com/trailofbits/skills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">11</div><div class="skill-body"><h3>Trail of Bits Security</h3><span class="skill-by">by Trail of Bits</span><p>Professional security expertise from one of the most respected security firms in the world. Static analysis, variant analysis, and vulnerability detection on your codebase. Built by real security researchers, not generic AI rules. Covers web, API, smart contract, and infrastructure security.</p><a class="skill-src" href="https://github.com/trailofbits/skills" target="_blank" rel="noopener">github.com/trailofbits/skills</a></div></article>
 
-    <article class="skill"><div class="skill-num">12</div><div class="skill-body">
-      <h3>Caveman Mode <span class="skill-by">by Julius Brussee</span></h3>
-      <p>Makes Claude talk in ultra-compressed language, cutting approximately 75% of output tokens while keeping full technical accuracy. If you are constantly hitting Claude's usage limits, this dramatically extends how much you can accomplish per session.</p>
-      <a class="skill-src" href="https://github.com/juliusbrussee/caveman" target="_blank" rel="noopener">github.com/juliusbrussee/caveman</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">12</div><div class="skill-body"><h3>Caveman Mode</h3><span class="skill-by">by Julius Brussee</span><p>Makes Claude talk in ultra-compressed language, cutting approximately 75% of output tokens while keeping full technical accuracy. If you are constantly hitting Claude's usage limits, this dramatically extends how much you can accomplish per session.</p><a class="skill-src" href="https://github.com/juliusbrussee/caveman" target="_blank" rel="noopener">github.com/juliusbrussee/caveman</a></div></article>
 
-    <article class="skill"><div class="skill-num">13</div><div class="skill-body">
-      <h3>Playwright Skill <span class="skill-by">by Justin Lackey</span></h3>
-      <p>Gives Claude the ability to write and execute browser automation on the fly using Playwright. Claude autonomously decides when to use it, opens a real browser, navigates your app, clicks buttons, fills forms, takes screenshots, and verifies everything works. Your entire QA process, automated.</p>
-      <a class="skill-src" href="https://github.com/lackeyjb/playwright-skill" target="_blank" rel="noopener">github.com/lackeyjb/playwright-skill</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">13</div><div class="skill-body"><h3>Playwright Skill</h3><span class="skill-by">by Justin Lackey</span><p>Gives Claude the ability to write and execute browser automation on the fly using Playwright. Claude autonomously decides when to use it, opens a real browser, navigates your app, clicks buttons, fills forms, takes screenshots, and verifies everything works. Your entire QA process, automated.</p><a class="skill-src" href="https://github.com/lackeyjb/playwright-skill" target="_blank" rel="noopener">github.com/lackeyjb/playwright-skill</a></div></article>
 
-    <article class="skill"><div class="skill-num">14</div><div class="skill-body">
-      <h3>SEO Machine <span class="skill-by">by Craig Hewitt</span></h3>
-      <p>A specialized workspace for creating long-form, SEO-optimized blog content. Handles research, writing, analysis, and optimization. Describe your topic and target keywords and Claude produces a full article structured to rank on Google, with keyword clustering and content gap analysis.</p>
-      <a class="skill-src" href="https://github.com/TheCraigHewitt/seomachine" target="_blank" rel="noopener">github.com/TheCraigHewitt/seomachine</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">14</div><div class="skill-body"><h3>SEO Machine</h3><span class="skill-by">by Craig Hewitt</span><p>A specialized workspace for creating long-form, SEO-optimized blog content. Handles research, writing, analysis, and optimization. Describe your topic and target keywords and Claude produces a full article structured to rank on Google, with keyword clustering and content gap analysis.</p><a class="skill-src" href="https://github.com/TheCraigHewitt/seomachine" target="_blank" rel="noopener">github.com/TheCraigHewitt/seomachine</a></div></article>
 
-    <article class="skill"><div class="skill-num">15</div><div class="skill-body">
-      <h3>Entrepreneur Skills</h3>
-      <p>Vierentwintig workflows op maat van founders. Van pricing tot pitch tot planning. Het soort dingen waar je normaal een mentor voor belt.</p>
-      <a class="skill-src" href="https://github.com/mfwarren/entrepreneur-claude-skills" target="_blank" rel="noopener">github.com/mfwarren/entrepreneur-claude-skills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">15</div><div class="skill-body"><h3>Entrepreneur Skills</h3><span class="skill-by">by Matt Warren</span><p>24 production-ready entrepreneurship skills covering marketing, sales, operations, finance, and leadership. Built by a founder, for founders. Each skill is a specific workflow that Claude can complete end-to-end, from business plans to pitch decks to hiring playbooks.</p><a class="skill-src" href="https://github.com/mfwarren/entrepreneur-claude-skills" target="_blank" rel="noopener">github.com/mfwarren/entrepreneur-claude-skills</a></div></article>
 
-    <article class="skill"><div class="skill-num">16</div><div class="skill-body">
-      <h3>D3.js Visualization <span class="skill-by">by Chris von Csefalvay</span></h3>
-      <p>Teaches Claude to produce interactive data visualizations using D3.js. Builds SVG-based graphics you can embed in websites, presentations, or reports. A data visualization expert in a single skill, with custom color schemes and responsive layouts.</p>
-      <a class="skill-src" href="https://github.com/chrisvoncsefalvay/claude-d3js-skill" target="_blank" rel="noopener">github.com/chrisvoncsefalvay/claude-d3js-skill</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">16</div><div class="skill-body"><h3>D3.js Visualization</h3><span class="skill-by">by Chris von Csefalvay</span><p>Teaches Claude to produce interactive data visualizations using D3.js. Builds SVG-based graphics you can embed in websites, presentations, or reports. A data visualization expert in a single skill, with custom color schemes and responsive layouts.</p><a class="skill-src" href="https://github.com/chrisvoncsefalvay/claude-d3js-skill" target="_blank" rel="noopener">github.com/chrisvoncsefalvay/claude-d3js-skill</a></div></article>
 
-    <article class="skill"><div class="skill-num">17</div><div class="skill-body">
-      <h3>iOS Simulator Skill <span class="skill-by">by Conor Luddy</span></h3>
-      <p>Optimizes Claude's ability to build, run, and interact with iOS apps through the simulator. Wraps xcodebuild commands to save context and lets Claude navigate your app, take screenshots, and test interactions. Closes the loop between writing code and seeing it run.</p>
-      <a class="skill-src" href="https://github.com/conorluddy/ios-simulator-skill" target="_blank" rel="noopener">github.com/conorluddy/ios-simulator-skill</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">17</div><div class="skill-body"><h3>iOS Simulator Skill</h3><span class="skill-by">by Conor Luddy</span><p>Optimizes Claude's ability to build, run, and interact with iOS apps through the simulator. Wraps xcodebuild commands to save context and lets Claude navigate your app, take screenshots, and test interactions. Closes the loop between writing code and seeing it run.</p><a class="skill-src" href="https://github.com/conorluddy/ios-simulator-skill" target="_blank" rel="noopener">github.com/conorluddy/ios-simulator-skill</a></div></article>
 
-    <article class="skill"><div class="skill-num">18</div><div class="skill-body">
-      <h3>Frontend Slides <span class="skill-by">by Rui Zhang</span></h3>
-      <p>Creates animation-rich HTML presentations from scratch or converts existing PowerPoint files into beautiful web-based slide decks with smooth transitions and responsive layouts. Looks significantly better than anything you could build in PowerPoint or Google Slides.</p>
-      <a class="skill-src" href="https://github.com/zarazhangrui/frontend-slides" target="_blank" rel="noopener">github.com/zarazhangrui/frontend-slides</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">18</div><div class="skill-body"><h3>Frontend Slides</h3><span class="skill-by">by Rui Zhang</span><p>Creates animation-rich HTML presentations from scratch or converts existing PowerPoint files into beautiful web-based slide decks with smooth transitions and responsive layouts. Looks significantly better than anything you could build in PowerPoint or Google Slides.</p><a class="skill-src" href="https://github.com/zarazhangrui/frontend-slides" target="_blank" rel="noopener">github.com/zarazhangrui/frontend-slides</a></div></article>
 
-    <article class="skill"><div class="skill-num">19</div><div class="skill-body">
-      <h3>Algorithmic Art <span class="skill-by">by Anthropic</span></h3>
-      <p>An official skill from the Claude team that creates generative art using p5.js with seeded randomness and particle systems. Describe the visual style you want and Claude builds code-generated art that is unique every time. Infinite variations by changing the random seed.</p>
-      <a class="skill-src" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">19</div><div class="skill-body"><h3>Algorithmic Art</h3><span class="skill-by">by Anthropic</span><p>An official skill from the Claude team that creates generative art using p5.js with seeded randomness and particle systems. Describe the visual style you want and Claude builds code-generated art that is unique every time. Infinite variations by changing the random seed.</p><a class="skill-src" href="https://github.com/anthropics/skills" target="_blank" rel="noopener">github.com/anthropics/skills</a></div></article>
 
-    <article class="skill"><div class="skill-num">20</div><div class="skill-body">
-      <h3>React Native Agent Skills <span class="skill-by">by Callstack</span></h3>
-      <p>The official React Native skill collection from Callstack, the core contributors to React Native. Deep expertise in JavaScript/React patterns, native iOS and Android integration, bundling, app size optimization, and platform-specific best practices.</p>
-      <a class="skill-src" href="https://github.com/callstackincubator/agent-skills" target="_blank" rel="noopener">github.com/callstackincubator/agent-skills</a>
-    </div></article>
+    <article class="skill"><div class="skill-num">20</div><div class="skill-body"><h3>React Native Agent Skills</h3><span class="skill-by">by Callstack</span><p>The official React Native skill collection from Callstack, the core contributors to React Native. Deep expertise in JavaScript/React patterns, native iOS and Android integration, bundling, app size optimization, and platform-specific best practices.</p><a class="skill-src" href="https://github.com/callstackincubator/agent-skills" target="_blank" rel="noopener">github.com/callstackincubator/agent-skills</a></div></article>
 
     </div><!-- /#gated -->
 
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA CARD -->
 <section class="cta-card">
   <div class="wrap-narrow">
     <div class="inner">
-      <p class="kicker"><span class="num">→</span> En nu?</p>
+      <span class="label">→ En nu?</span>
       <h2>Je hoeft ze niet <em>alle twintig</em> te installeren</h2>
-      <p>Begin bij die ene die je vandaag iets oplevert. Zo deed ik het ook: niet alles tegelijk, wel één tool die werkt, en dan de volgende. En als je voelt dat je dit zelf wil leren, maar niet alleen vanaf je zolderkamer, dan is dat precies waarom ik deze zomer de <em>AI Summer Shift</em> doe. Drie halve dagen op BORA, tien ondernemers, je website af in zes weken. Met Claude Code als je co-founder.</p>
-      <a href="ai-summer-shift.html" class="btn">
-        <span>Ontdek de AI Summer Shift</span>
-        <svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg>
-      </a>
+      <p>Begin bij die ene die je vandaag iets oplevert. Zo deed ik het ook: niet alles tegelijk, wel één tool die werkt, en dan de volgende. En als je voelt dat je dit zelf wil leren, maar niet alleen vanaf je zolderkamer, dan is dat precies waarom ik deze zomer de <em style="color:#d4a684;font-style:italic;">AI Summer Shift</em> doe.</p>
+      <a href="ai-summer-shift.html" class="btn">Ontdek de Summer Shift</a>
     </div>
   </div>
 </section>
 
 </main>
 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand"><div class="logo">Laurence<em>Uvin</em></div><p>Strategy with softness. Voor de ondernemer die meer wil, zonder zichzelf te verliezen.</p></div>
+    <div class="footer-col"><h5>Work</h5><a href="coaching.html">1:1 Coaching</a><a href="websites.html">Custom Websites</a><a href="ai-summer-shift.html">AI Summer Shift</a><a href="podcast.html">Podcast</a></div>
+    <div class="footer-col"><h5>Resources</h5><a href="claude-skills-2026.html">Free AI Skills Guide</a><a href="podcast.html">All episodes</a><a href="index.html#framework">Ecosystem framework</a></div>
+    <div class="footer-col"><h5>Contact</h5><a href="mailto:hello@laurenceuvin.com">hello@laurenceuvin.com</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+  </div>
+  <div class="footer-meta"><span>© 2026 Laurence Uvin</span><span>BORA · Zuienkerke · België</span><span>Built with Claude Code</span></div>
+</footer>
+
 <script>
 (function(){
-  /* ===================================================================
-     LEAD GATE — instant unlock + download
-     Bij verzenden gaat het adres naar je inbox via FormSubmit, en de gids
-     ontgrendelt METEEN op de pagina (geen Plug&Pay-omweg).
-     LET OP: de allereerste inzending stuurt een activatie-mail naar
-     FORMSUBMIT_EMAIL -- klik die EEN keer aan, daarna stromen alle leads
-     automatisch binnen.
-     =================================================================== */
   var FORMSUBMIT_EMAIL = "hello@laurenceuvin.com";
-
-  var KEY  = "aiskills_unlocked";
+  var KEY = "aiskills_unlocked";
   var body = document.body;
   var gate = document.getElementById('gate');
   var form = document.getElementById('gate-form');
 
-  function unlock(scrollToContent){
+  function unlock(scrollIt){
     body.classList.add('unlocked');
-    if (scrollToContent) {
+    if (scrollIt) {
       var g = document.getElementById('gated');
-      if (g) g.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (g) g.scrollIntoView({behavior:'smooth', block:'start'});
     }
   }
 
-  /* Terugkerende bezoekers blijven ontgrendeld */
   if (localStorage.getItem(KEY) === 'yes') unlock(false);
 
   if (form) {
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var email    = (form.email.value || '').trim();
+      var email = (form.email.value || '').trim();
       var voornaam = (form.voornaam.value || '').trim();
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
         gate.classList.add('show-err'); form.email.focus(); return;
       }
       gate.classList.remove('show-err');
 
-      /* Lead naar je inbox via FormSubmit (blokkeert de unlock niet) */
       try {
         fetch("https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_EMAIL), {
           method: "POST",
@@ -590,29 +331,12 @@ footer {
         }).catch(function(){});
       } catch (err) {}
 
-      /* Meteen ontgrendelen */
       localStorage.setItem(KEY, 'yes');
       unlock(true);
     });
   }
 })();
 </script>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Laurence <span style="color:var(--warm-tan)">Uvin</span></div>
-    <div class="footer-links">
-      <a href="ai-summer-shift.html">AI Summer Shift</a>
-      <a href="mailto:hello@laurenceuvin.com">Contact</a>
-      <a href="#">CEO Lifestyle™</a>
-    </div>
-  </div>
-  <div class="footer-meta">
-    <span>© 2026 Laurence Uvin</span>
-    <span>BORA Coworking · Zuienkerke · België</span>
-    <span>hello@laurenceuvin.com</span>
-  </div>
-</footer>
 
 </body>
 </html>
