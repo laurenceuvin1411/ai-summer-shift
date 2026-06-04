@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Custom Website Studio — Digitale ecosystemen die verkopen · Laurence Uvin</title>
+<meta name="description" content="Geen websites. Digitale ecosystemen die verkopen. Strategie, copy, design, build en AI-integraties in één traject." />
+
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900,301,401,501,701&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{--th-black:#191917;--th-black-deep:#0e0e0c;--th-black-soft:#232220;--th-white:#fff;--w90:rgba(255,255,255,0.92);--w80:rgba(255,255,255,0.82);--w60:rgba(255,255,255,0.60);--w40:rgba(255,255,255,0.40);--w20:rgba(255,255,255,0.18);--w10:rgba(255,255,255,0.08);--warm-tan:#c4a684;--peach:#e89668;--peach-soft:rgba(232,150,104,0.16);--sans:'Satoshi',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;--mono:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;--gutter:clamp(22px,4vw,56px);--maxw:1480px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;background:var(--th-black);}
+body{background:var(--th-black);color:var(--th-white);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;} a{color:inherit;text-decoration:none;}
+::selection{background:var(--warm-tan);color:var(--th-black);}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px var(--gutter);background:linear-gradient(180deg,rgba(25,25,23,0.82),rgba(25,25,23,0.45) 70%,transparent);backdrop-filter:blur(10px) saturate(1.05);-webkit-backdrop-filter:blur(10px) saturate(1.05);}
+.topbar-inner{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;}
+.brand-mark{font-size:14px;letter-spacing:0.42em;text-transform:uppercase;font-weight:500;}
+.brand-mark em{font-style:italic;color:var(--peach);margin-left:2px;font-weight:500;}
+.nav-mid{display:flex;justify-content:center;gap:36px;font-size:14px;font-weight:500;}
+.nav-mid a{transition:color 0.2s;position:relative;}
+.nav-mid a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--peach);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.nav-mid a:hover{color:var(--peach);} .nav-mid a:hover::after{transform:scaleX(1);}
+.nav-mid a.current{color:var(--peach);} .nav-mid a.current::after{transform:scaleX(1);}
+.nav-end{display:flex;align-items:center;gap:14px;justify-self:end;}
+.nav-pill{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;border:1px solid var(--w40);border-radius:999px;padding:10px 18px;transition:all 0.25s;}
+.nav-pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--peach);}
+.nav-pill:hover{border-color:var(--th-white);background:var(--w10);}
+.menu-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--w20);display:grid;place-items:center;cursor:pointer;transition:all 0.25s;}
+.menu-btn:hover{border-color:var(--th-white);background:var(--w10);}
+.menu-btn span{position:relative;width:14px;height:1px;background:var(--th-white);display:block;}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--th-white);}
+.menu-btn span::before{top:-5px;} .menu-btn span::after{top:5px;}
+@media(max-width:1100px){.topbar{padding:18px 22px;}.topbar-inner{grid-template-columns:auto auto;gap:16px;}.nav-mid,.nav-pill{display:none;}}
+
+section{padding:0 var(--gutter);position:relative;}
+.wrap{max-width:var(--maxw);margin:0 auto;} .wrap-narrow{max-width:960px;margin:0 auto;}
+.kicker{font-family:var(--mono);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--w60);display:inline-flex;align-items:center;gap:14px;}
+.kicker::before{content:"";width:32px;height:1px;background:var(--peach);}
+.kicker .num{color:var(--peach);font-weight:500;}
+
+h1,h2,h3,h4{font-family:var(--sans);font-weight:500;color:var(--th-white);letter-spacing:-0.04em;line-height:1;}
+.h1{font-size:clamp(48px,9.5vw,158px);font-weight:500;letter-spacing:-0.055em;line-height:0.92;text-transform:uppercase;}
+.h1 em{font-style:italic;color:var(--peach);font-weight:500;}
+h2{font-size:clamp(32px,5.5vw,88px);font-weight:500;letter-spacing:-0.045em;line-height:0.96;text-transform:uppercase;}
+h2 em{font-style:italic;color:var(--peach);font-weight:500;}
+h3{font-size:clamp(22px,2.6vw,32px);font-weight:500;letter-spacing:-0.025em;line-height:1.1;}
+h3 em{font-style:italic;color:var(--peach);}
+p{color:var(--w80);margin-bottom:1em;}
+.deck{font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--w80);max-width:38ch;}
+.deck em{font-style:italic;color:var(--peach);}
+
+.btn{display:inline-flex;align-items:center;gap:14px;background:var(--th-white);color:var(--th-black);font-size:13px;font-weight:500;letter-spacing:0.04em;padding:22px 32px;border:1px solid var(--th-white);border-radius:999px;transition:all 0.4s cubic-bezier(0.2,0.8,0.2,1);cursor:pointer;white-space:nowrap;}
+.btn:hover{background:var(--peach);border-color:var(--peach);}
+.btn .arrow{width:22px;height:8px;transition:transform 0.4s cubic-bezier(0.2,0.8,0.2,1);}
+.btn:hover .arrow{transform:translateX(6px);}
+.btn-ghost{background:transparent;color:var(--th-white);border-color:var(--w40);}
+.btn-ghost:hover{background:var(--th-white);color:var(--th-black);border-color:var(--th-white);}
+
+.blur-in{opacity:0;filter:blur(0.25em);will-change:filter,opacity;animation:blurIn 1.4s cubic-bezier(0.2,0.7,0.2,1) forwards;}
+.blur-in.d0{animation-delay:0.05s;} .blur-in.d1{animation-delay:0.18s;} .blur-in.d2{animation-delay:0.32s;} .blur-in.d3{animation-delay:0.50s;} .blur-in.d4{animation-delay:0.70s;} .blur-in.d5{animation-delay:0.92s;}
+@keyframes blurIn{to{opacity:1;filter:blur(0);}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.9s cubic-bezier(0.2,0.7,0.2,1),transform 0.9s cubic-bezier(0.2,0.7,0.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:0.1s;} .reveal.d2{transition-delay:0.2s;} .reveal.d3{transition-delay:0.3s;} .reveal.d4{transition-delay:0.4s;} .reveal.d5{transition-delay:0.5s;}
+@media(prefers-reduced-motion:reduce){.blur-in,.reveal{opacity:1!important;transform:none!important;filter:none!important;animation:none!important;transition:none!important;}}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:150px;padding-bottom:80px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;}
+.hero::before{content:"";position:absolute;top:25%;right:-10%;width:50vw;height:50vw;max-width:700px;max-height:700px;background:radial-gradient(circle,rgba(232,150,104,0.16),transparent 60%);}
+.hero::after{content:"";position:absolute;bottom:-10%;left:-10%;width:45vw;height:45vw;max-width:600px;max-height:600px;background:radial-gradient(circle,rgba(196,166,132,0.14),transparent 60%);}
+.hero-pre{text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:var(--w60);margin-bottom:80px;display:inline-flex;gap:16px;align-items:center;justify-content:center;width:100%;position:relative;z-index:2;}
+.hero-pre .dot{width:5px;height:5px;border-radius:50%;background:var(--peach);}
+.hero-block{text-align:center;display:flex;flex-direction:column;align-items:center;width:100%;flex:1;justify-content:center;position:relative;z-index:2;}
+.h1.hero-line{display:block;width:100%;}
+.h1.hero-line+.h1.hero-line{margin-top:0.015em;}
+.hero-sub{margin-top:56px;max-width:48ch;font-size:clamp(17px,1.6vw,21px);line-height:1.55;color:var(--w80);}
+.hero-sub em{font-style:italic;color:var(--peach);}
+.hero-cta-row{margin-top:48px;display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;}
+.hero-foot{margin-top:80px;padding-top:44px;border-top:1px solid var(--w10);display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--w60);line-height:1.7;position:relative;z-index:2;}
+.hero-foot b{color:var(--th-white);font-weight:500;display:block;margin-bottom:4px;}
+@media(max-width:900px){.hero{padding-top:130px;}.hero-pre{margin-bottom:50px;}.hero-foot{grid-template-columns:1fr 1fr;gap:20px;}}
+
+/* FUNNEL VIZ */
+.funnel{padding-top:160px;padding-bottom:160px;background:var(--th-black-deep);}
+.funnel-head{text-align:center;margin-bottom:80px;}
+.funnel-head .kicker{justify-content:center;} .funnel-head h2{margin-top:28px;display:inline-block;max-width:22ch;} .funnel-head .deck{margin:28px auto 0;max-width:50ch;text-align:center;}
+.funnel-row{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center;}
+.fn{padding:36px 22px;text-align:center;position:relative;border:1px solid var(--w10);background:var(--th-black-soft);transition:all 0.4s;}
+.fn:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--peach);font-size:18px;background:var(--th-black-deep);padding:6px 8px;z-index:2;}
+.fn.in{border-color:var(--peach);box-shadow:0 0 0 1px var(--peach-soft);}
+.fn .fnum{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--peach);font-weight:500;margin-bottom:14px;display:block;}
+.fn h3{font-size:clamp(18px,2vw,22px);text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:10px;}
+.fn p{font-size:13px;line-height:1.55;color:var(--w60);margin:0;}
+@media(max-width:900px){.funnel-row{grid-template-columns:1fr;}.fn:not(:last-child)::after{content:"↓";right:50%;top:auto;bottom:-14px;transform:translateX(50%);}}
+
+/* TYPES */
+.types{padding-top:160px;padding-bottom:160px;}
+.types-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px;}
+.types-head h2 em{color:var(--peach);}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--w10);}
+.tcard{padding:44px 36px;border-right:1px solid var(--w10);border-bottom:1px solid var(--w10);transition:background 0.4s;display:flex;flex-direction:column;gap:18px;min-height:300px;position:relative;overflow:hidden;}
+.tcard::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,var(--peach-soft),transparent 70%);opacity:0;transition:opacity 0.5s;pointer-events:none;}
+.tcard:hover{background:rgba(255,255,255,0.02);} .tcard:hover::before{opacity:1;}
+.tcard:nth-child(3n){border-right:none;}
+.tcard .tnum{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--peach);font-weight:500;}
+.tcard h3{font-size:24px;text-transform:uppercase;letter-spacing:-0.025em;}
+.tcard h3 em{font-style:italic;color:var(--peach);font-weight:500;}
+.tcard p{font-size:14.5px;line-height:1.6;color:var(--w80);margin:0;flex:1;}
+.tcard .tprice{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--w60);padding-top:18px;border-top:1px solid var(--w10);margin-top:10px;}
+.tcard .tprice b{color:var(--th-white);font-weight:500;}
+@media(max-width:900px){.types-head{grid-template-columns:1fr;gap:24px;}.types-grid{grid-template-columns:repeat(2,1fr);}.tcard{padding:36px 24px;border-right:1px solid var(--w10);}.tcard:nth-child(2n){border-right:none;}.tcard:nth-child(3n){border-right:1px solid var(--w10);}}
+@media(max-width:600px){.types-grid{grid-template-columns:1fr;}.tcard,.tcard:nth-child(n){border-right:none;}}
+
+/* EXPERTISE */
+.expert{padding-top:160px;padding-bottom:160px;background:var(--th-black-deep);}
+.expert-head{text-align:center;margin-bottom:80px;}
+.expert-head .kicker{justify-content:center;} .expert-head h2{margin-top:28px;}
+.expert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.echip{padding:32px 26px;border:1px solid var(--w10);border-radius:6px;transition:all 0.4s;background:var(--th-black-soft);}
+.echip:hover{border-color:var(--peach);transform:translateY(-4px);}
+.echip .ico{width:32px;height:32px;color:var(--peach);margin-bottom:18px;}
+.echip h3{font-size:18px;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:10px;}
+.echip p{font-size:13px;line-height:1.55;color:var(--w80);margin:0;}
+@media(max-width:900px){.expert-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* PORTFOLIO */
+.portfolio{padding-top:160px;padding-bottom:160px;}
+.port-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:80px;}
+.port-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.proj{position:relative;border:1px solid var(--w10);border-radius:6px;overflow:hidden;transition:all 0.4s;background:var(--th-black-soft);}
+.proj:hover{border-color:var(--peach);transform:translateY(-6px);}
+.proj .mock{aspect-ratio:16/10;position:relative;overflow:hidden;border-bottom:1px solid var(--w10);}
+.proj .mock .bar{height:24px;background:var(--th-black-deep);border-bottom:1px solid var(--w10);display:flex;align-items:center;gap:5px;padding:0 10px;}
+.proj .mock .bar i{width:7px;height:7px;border-radius:50%;background:var(--w20);}
+.proj .mock .body{padding:24px;display:flex;flex-direction:column;gap:10px;height:calc(100% - 24px);}
+.proj .mock .l{height:14px;background:var(--w20);border-radius:2px;}
+.proj .mock.a .body .l:nth-child(1){width:65%;height:24px;}
+.proj .mock.a .body .l:nth-child(2){width:40%;height:18px;background:rgba(232,150,104,0.4);}
+.proj .mock.a .body .l:nth-child(3){width:90%;} .proj .mock.a .body .l:nth-child(4){width:75%;}
+.proj .mock.a .body .l:nth-child(5){width:28%;height:28px;background:var(--th-white);border-radius:999px;margin-top:8px;}
+.proj .mock.b{background:linear-gradient(135deg,#2a2520,#15130f);}
+.proj .mock.b .body .l:nth-child(1){width:55%;height:22px;}
+.proj .mock.b .body .l:nth-child(2){width:80%;}
+.proj .mock.b .body .l:nth-child(3){width:60%;background:rgba(232,150,104,0.4);}
+.proj .mock.c{background:linear-gradient(180deg,#1f1c17,#0e0e0c);}
+.proj .mock.c .body{flex-direction:row;flex-wrap:wrap;gap:8px;}
+.proj .mock.c .body .l{height:60px;flex:1 1 28%;}
+.proj .mock.d .body .l:nth-child(1){width:50%;height:30px;background:rgba(232,150,104,0.4);}
+.proj .mock.d .body .l:nth-child(2){width:90%;}
+.proj .mock.d .body .l:nth-child(3){width:70%;}
+.proj .mock.d .body .l:nth-child(4){width:25%;height:30px;background:var(--th-white);border-radius:999px;}
+.proj .info{padding:26px 28px;display:flex;justify-content:space-between;align-items:end;gap:20px;}
+.proj .info h3{font-size:20px;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:6px;}
+.proj .info .meta{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--w60);}
+.proj .info .arr{font-family:var(--mono);color:var(--w40);font-size:18px;transition:all 0.3s;}
+.proj:hover .info .arr{color:var(--peach);transform:translateX(4px);}
+@media(max-width:800px){.port-head{grid-template-columns:1fr;gap:24px;}.port-grid{grid-template-columns:1fr;}}
+
+/* PROCESS */
+.process{padding-top:160px;padding-bottom:160px;background:var(--th-black-deep);}
+.process-head{text-align:center;margin-bottom:80px;}
+.process-head .kicker{justify-content:center;} .process-head h2{margin-top:28px;}
+.process-steps{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--w10);}
+.pstep{padding:36px 24px;border-right:1px solid var(--w10);border-bottom:1px solid var(--w10);transition:background 0.4s;}
+.pstep:nth-child(5n){border-right:none;}
+.pstep:hover{background:rgba(255,255,255,0.02);}
+.pstep .pnum{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--peach);font-weight:500;margin-bottom:14px;display:block;}
+.pstep h3{font-size:18px;text-transform:uppercase;letter-spacing:-0.025em;margin-bottom:10px;}
+.pstep p{font-size:13px;line-height:1.6;color:var(--w80);margin:0;}
+@media(max-width:900px){.process-steps{grid-template-columns:repeat(2,1fr);}.pstep,.pstep:nth-child(5n){border-right:1px solid var(--w10);}.pstep:nth-child(2n){border-right:none;}}
+@media(max-width:600px){.process-steps{grid-template-columns:1fr;}.pstep,.pstep:nth-child(n){border-right:none;}}
+
+/* CTA */
+.cta{padding-top:200px;padding-bottom:200px;text-align:center;position:relative;overflow:hidden;}
+.cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:clamp(400px,60vw,900px);height:clamp(400px,60vw,900px);border-radius:50%;background:radial-gradient(circle,rgba(232,150,104,0.12),transparent 60%);}
+.cta .kicker{justify-content:center;}
+.cta h2{max-width:18ch;margin:32px auto 36px;font-size:clamp(48px,8.5vw,130px);letter-spacing:-0.045em;line-height:0.94;position:relative;z-index:1;}
+.cta h2 em{color:var(--peach);}
+.cta p{max-width:54ch;margin:0 auto 50px;font-size:clamp(18px,1.9vw,22px);line-height:1.55;position:relative;z-index:1;}
+.cta .cta-row{position:relative;z-index:1;display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.cta .contact{margin-top:36px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--w60);position:relative;z-index:1;}
+.cta .contact a{color:var(--th-white);border-bottom:1px solid var(--peach);padding-bottom:1px;}
+
+footer{padding:100px var(--gutter) 30px;background:var(--th-black-deep);color:var(--w60);font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;border-top:1px solid var(--w10);}
+.footer-top{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;padding-bottom:80px;border-bottom:1px solid var(--w10);}
+.footer-logo{font-size:clamp(34px,5vw,56px);font-weight:500;color:var(--th-white);text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95;margin-bottom:24px;}
+.footer-logo em{font-style:italic;color:var(--peach);font-weight:500;}
+.footer-tag{color:var(--w60);font-size:10px;letter-spacing:0.22em;line-height:1.7;}
+.footer-col h5{font-size:10px;letter-spacing:0.22em;color:var(--w40);margin-bottom:22px;font-weight:400;text-transform:uppercase;}
+.footer-col a{display:block;margin-bottom:12px;color:var(--th-white);transition:color 0.2s;text-transform:none;letter-spacing:0;font-family:var(--sans);font-size:15px;}
+.footer-col a:hover{color:var(--peach);}
+.footer-meta{max-width:var(--maxw);margin:30px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--w40);font-size:10px;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:30px;}}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand-mark">LAURENCE&nbsp;&nbsp;<em>UVIN</em></a>
+    <div class="nav-mid">
+      <a href="coaching.html">Coaching</a>
+      <a href="websites.html" class="current">Websites</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="ai-summer-shift.html">Summer Shift</a>
+    </div>
+    <div class="nav-end">
+      <a href="claude-skills-2026.html" class="nav-pill">Gratis gids</a>
+      <a href="index.html" class="menu-btn" aria-label="Home"><span></span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-pre blur-in d0"><span>Custom Website Studio</span><span class="dot"></span><span>Strategie · Design · Build</span></div>
+    <div class="hero-block">
+      <span class="h1 hero-line blur-in d1">Geen websites.</span>
+      <span class="h1 hero-line blur-in d2"><em>Ecosystemen</em> die verkopen.</span>
+      <p class="hero-sub blur-in d3">Strategie, copy, design, build en AI-integraties in één traject. Geen losse onderdelen, wel <em>één systeem</em> dat richting geeft aan je business én resultaten oplevert.</p>
+      <div class="hero-cta-row blur-in d4">
+        <a href="#cta" class="btn"><span>Start je project</span><svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg></a>
+        <a href="#portfolio" class="btn btn-ghost"><span>Bekijk het werk</span></a>
+      </div>
+    </div>
+    <div class="hero-foot blur-in d5">
+      <div><b>Format</b><span>Custom build · End-to-end</span></div>
+      <div><b>Doorlooptijd</b><span>5 tot 8 weken</span></div>
+      <div><b>Investering</b><span>Vanaf € 2.500</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL -->
+<section class="funnel">
+  <div class="wrap">
+    <div class="funnel-head reveal">
+      <p class="kicker"><span class="num">01</span> &nbsp;·&nbsp; Het systeem</p>
+      <h2>Een website is geen <em>brochure</em>. Het is een <em>funnel</em>.</h2>
+      <p class="deck">Vijf stappen die we samen ontwerpen, zodat anonieme bezoekers betalende klanten worden zonder dat je elke dag moet posten.</p>
+    </div>
+    <div class="funnel-row">
+      <div class="fn reveal in"><span class="fnum">01</span><h3>Traffic</h3><p>SEO, social, ads of organisch verkeer dat eindelijk weet waar het naartoe gaat.</p></div>
+      <div class="fn reveal d1 in"><span class="fnum">02</span><h3>Website</h3><p>De omgeving die jouw verhaal vertelt en mensen tot actie brengt.</p></div>
+      <div class="fn reveal d2 in"><span class="fnum">03</span><h3>Lead</h3><p>Een opt-in flow die respect toont en mensen graag terug laat komen.</p></div>
+      <div class="fn reveal d3 in"><span class="fnum">04</span><h3>Nurture</h3><p>Mails, content en touchpoints die warmte opbouwen, zonder pushen.</p></div>
+      <div class="fn reveal d4 in"><span class="fnum">05</span><h3>Sales</h3><p>Een aanbod en checkout-flow waar mensen zeker zijn van hun ja.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="types">
+  <div class="wrap">
+    <div class="types-head">
+      <div class="reveal"><p class="kicker"><span class="num">02</span> &nbsp;·&nbsp; Wat ik bouw</p><h2>Vijf types <em>websites</em></h2></div>
+      <p class="deck reveal d1">Elk traject is custom, geen template. Maar er zijn vijf vormen die het vaakst terugkomen.</p>
+    </div>
+    <div class="types-grid">
+      <article class="tcard reveal"><span class="tnum">01 / Brand</span><h3>Personal Brand <em>Website</em></h3><p>De digitale thuis van jouw merk. Voor coaches, hosts, founders, experts. Eén plek die laat zien wie je bent en wat je biedt.</p><div class="tprice"><b>Vanaf € 2.500</b> · 4–6 weken</div></article>
+      <article class="tcard reveal d1"><span class="tnum">02 / Business</span><h3>Business <em>Website</em></h3><p>Voor ondernemingen met meerdere diensten en een team. Strakke architectuur, duidelijke navigatie, klaar om mee te groeien.</p><div class="tprice"><b>Vanaf € 4.000</b> · 5–7 weken</div></article>
+      <article class="tcard reveal d2"><span class="tnum">03 / Premium</span><h3>Premium Service <em>Site</em></h3><p>High-end positionering voor wie diensten verkoopt vanaf € 5.000. Editorial design, sterke storytelling, en een check-out die premium voelt.</p><div class="tprice"><b>Vanaf € 5.500</b> · 6–8 weken</div></article>
+      <article class="tcard reveal d3"><span class="tnum">04 / Sales</span><h3>Conversion <em>Focused</em></h3><p>Eén pagina, één doel. Sales pages, lead magnet-pagina's, launch-funnels. Gebouwd om te converteren, niet om er enkel mooi uit te zien.</p><div class="tprice"><b>Vanaf € 2.000</b> · 3–4 weken</div></article>
+      <article class="tcard reveal d4"><span class="tnum">05 / AI</span><h3>AI-powered <em>Website</em></h3><p>Met geïntegreerde AI: slimme chat, gepersonaliseerde flows, dynamische copy. Voor wie zijn voorsprong wil verzilveren.</p><div class="tprice"><b>Vanaf € 5.000</b> · 5–7 weken</div></article>
+      <article class="tcard reveal d5"><span class="tnum">06 / Care</span><h3>Onderhoud & <em>Updates</em></h3><p>Geen build maar een doorlopende samenwerking. Updates, nieuwe pagina's, A/B-tests en groei. Voor wie z'n site levend wil houden.</p><div class="tprice"><b>Vanaf € 250/mnd</b> · Doorlopend</div></article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expert">
+  <div class="wrap">
+    <div class="expert-head reveal">
+      <p class="kicker"><span class="num">03</span> &nbsp;·&nbsp; Wat erin zit</p>
+      <h2>Acht <em>disciplines</em>, één team</h2>
+    </div>
+    <div class="expert-grid">
+      <div class="echip reveal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg><h3>UX</h3><p>Een gebruikersreis die voelt als logica, niet als marketing.</p></div>
+      <div class="echip reveal d1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="13" cy="11" r="7"/><circle cx="9" cy="14" r="3"/></svg><h3>UI</h3><p>Visueel design dat in je brand klikt, met details die kloppen.</p></div>
+      <div class="echip reveal d2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v6H4z"/><path d="M4 14h10v6H4z"/></svg><h3>Branding</h3><p>Stem, typografie, kleur, beeld. Een merk dat blijft hangen.</p></div>
+      <div class="echip reveal d3"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h14M5 12h10M5 18h12"/></svg><h3>Copy</h3><p>Woorden die klikken bij je publiek, zonder marketingspeak.</p></div>
+      <div class="echip reveal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20l8-12 4 6 4-4"/></svg><h3>Conversion</h3><p>CTA's, flows en details die mensen tot actie brengen.</p></div>
+      <div class="echip reveal d1"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18"/></svg><h3>SEO</h3><p>Vindbaar in Google, zonder jezelf in keyword-tools te verliezen.</p></div>
+      <div class="echip reveal d2"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/><path d="M9 16c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg><h3>AI</h3><p>Slimme integraties die je site laten meedenken met je publiek.</p></div>
+      <div class="echip reveal d3"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg><h3>Automation</h3><p>Mailflows, checkouts, opt-ins. Het stille werk dat verkoopt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="port-head">
+      <div class="reveal"><p class="kicker"><span class="num">04</span> &nbsp;·&nbsp; Selected work</p><h2>Recent <em>gebouwd</em></h2></div>
+      <p class="deck reveal d1">Een greep uit wat er recent live ging. Custom builds, geen sjablonen.</p>
+    </div>
+    <div class="port-grid">
+      <a href="#cta" class="proj reveal"><div class="mock a"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div></div><div class="info"><div><h3>AI Summer Shift</h3><span class="meta">Cohort programma · Cohort site</span></div><span class="arr">→</span></div></a>
+      <a href="#cta" class="proj reveal d1"><div class="mock b"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="l"></div><div class="l"></div><div class="l"></div></div></div><div class="info"><div><h3>Studio Briek</h3><span class="meta">Personal brand · 2026</span></div><span class="arr">→</span></div></a>
+      <a href="#cta" class="proj reveal d2"><div class="mock c"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div></div><div class="info"><div><h3>Atelier 9</h3><span class="meta">Service-platform · 2026</span></div><span class="arr">→</span></div></a>
+      <a href="#cta" class="proj reveal d3"><div class="mock d"><div class="bar"><i></i><i></i><i></i></div><div class="body"><div class="l"></div><div class="l"></div><div class="l"></div><div class="l"></div></div></div><div class="info"><div><h3>Mindwork</h3><span class="meta">Coach landing · 2025</span></div><span class="arr">→</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <div class="process-head reveal">
+      <p class="kicker"><span class="num">05</span> &nbsp;·&nbsp; Het proces</p>
+      <h2>Vijf weken, <em>vijf fases</em></h2>
+    </div>
+    <div class="process-steps">
+      <article class="pstep reveal"><span class="pnum">01</span><h3>Discover</h3><p>We brengen je business, je publiek en je doel in kaart. Eén intensieve sessie.</p></article>
+      <article class="pstep reveal d1"><span class="pnum">02</span><h3>Strategy</h3><p>Architectuur, positionering en copy-richting. De fundering waarop alles bouwt.</p></article>
+      <article class="pstep reveal d2"><span class="pnum">03</span><h3>Design</h3><p>Visueel ontwerp dat in je merk klikt. Geen template, wel custom.</p></article>
+      <article class="pstep reveal d3"><span class="pnum">04</span><h3>Build</h3><p>De technische uitwerking, mét AI waar het toegevoegde waarde geeft.</p></article>
+      <article class="pstep reveal d4"><span class="pnum">05</span><h3>Launch</h3><p>QA, SEO, snelheid, integraties. Live met vertrouwen, klaar om te groeien.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="cta">
+  <div class="wrap-narrow">
+    <p class="kicker"><span class="num">06</span> &nbsp;·&nbsp; Volgende stap</p>
+    <h2>Laat me <em>jouw project</em> zien</h2>
+    <p>Een korte call van 20 minuten om te kijken of het klikt, wat je nodig hebt, en welke aanpak past. Gratis, niet bindend.</p>
+    <div class="cta-row">
+      <a href="https://calendly.com/laurence-uvin/website-intake" class="btn"><span>Plan een intake</span><svg class="arrow" viewBox="0 0 22 8" fill="none"><path d="M0 4h20m0 0L17 1m3 3L17 7" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      <a href="mailto:hello@laurenceuvin.com" class="btn btn-ghost"><span>Mail me direct</span></a>
+    </div>
+    <div class="contact">Of stuur me een berichtje op <a href="mailto:hello@laurenceuvin.com">hello@laurenceuvin.com</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-logo">Laurence <em>Uvin</em></div><div class="footer-tag">Strategie · Brand · Digitaal ecosysteem<br>Founder · BORA · CEO Lifestyle™</div></div>
+    <div class="footer-col"><h5>Werken met mij</h5><a href="coaching.html">1:1 Coaching</a><a href="websites.html">Custom Websites</a><a href="ai-summer-shift.html">AI Summer Shift</a><a href="podcast.html">Podcast</a></div>
+    <div class="footer-col"><h5>Resources</h5><a href="claude-skills-2026.html">Gratis AI Skills Gids</a><a href="podcast.html">Alle afleveringen</a><a href="index.html#framework">Het Ecosysteem-framework</a></div>
+    <div class="footer-col"><h5>Contact</h5><a href="mailto:hello@laurenceuvin.com">hello@laurenceuvin.com</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div>
+  </div>
+  <div class="footer-meta"><span>© 2026 Laurence Uvin</span><span>BORA · Zuienkerke · België</span><span>Built with Claude Code</span></div>
+</footer>
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
